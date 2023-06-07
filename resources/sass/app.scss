@@ -1,0 +1,34 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+/*
+|--------------------------------------------------------------------------
+| Mouse
+|--------------------------------------------------------------------------
+*/
+.m-pointer {
+    cursor: pointer !important;
+}
+
+.m-default {
+    cursor: default !important;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Form
+|--------------------------------------------------------------------------
+*/
+.form-floating > .form-control:focus ~ label::after,
+.form-floating > .form-control:not(:placeholder-shown) ~ label::after,
+.form-floating > .form-control-plaintext ~ label::after,
+.form-floating > .form-select ~ label::after {
+    background-color: transparent;
+}

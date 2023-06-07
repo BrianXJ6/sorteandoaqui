@@ -1,0 +1,19 @@
+{
+    "Regards": "Atenciosamente",
+    "If you're having trouble clicking the \":actionText\" button, copy and paste the URL below\ninto your web browser:": "Se você estiver com problemas para clicar no botão \":actionText\", copie e cole o URL abaixo\nem seu navegador da web:",
+    "This action is unauthorized.": "Ops! você não tem permissão para fazer isso!",
+    "Too Many Attempts.": "Muitas tentativas, por favor, aguarde!",
+    "Too Many Requests": "Muitas solicitações, por favor, aguarde!",
+    "Unauthenticated.": "é necessário está autenticado!",
+    "Unauthorized": "Não autorizado!",
+    "Payment Required": "Pagamento Requerido!",
+    "Forbidden": "Proibido!",
+    "Not Found": "Não localizado!",
+    "Page Expired": "Página expirada",
+    "Server Error": "Erro interno!",
+    "Service Unavailable": "Serviço não disponível!",
+    "no results found": "nenhum resultado encontrado",
+    "no results found for :model": "nenhum resultado encontrado para :model",
+    "with ID: :id.": "com ID: :id.",
+    "Could not find the route.": "Não foi possível encontrar a rota."
+}
