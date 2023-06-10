@@ -1,8 +1,8 @@
 {
-    "name": "obasorteios/obasorteios",
+    "name": "appname/appname",
     "type": "project",
-    "description": "The Oba Sorteios plataform.",
-    "keywords": [ "obasorteios" ],
+    "description": "The App Name plataform.",
+    "keywords": [ "appname" ],
     "license": "MIT",
     "require": {
         "php": "^8.1",
