@@ -44,5 +44,6 @@ return [
         'message' => 'This website uses cookies. By continuing to browse, you agree to the conditions.',
         'doc' => 'Learn more by clicking here!',
         'agree' => 'Agree',
+        'link_title' => 'Cookie Policy',
     ],
 ];

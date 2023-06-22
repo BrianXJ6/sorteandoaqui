@@ -7,10 +7,7 @@
             <div class="card-body">
                 <h1 v-html="title" />
                 <p v-html="description" class="small text-secondary" />
-                <Link
-                    class="btn btn-dark px-5 shadow-sm"
-                    :href="route('web.user.dashboard.home')"
-                >Sair</Link>
+                <Link class="btn btn-dark px-5 shadow-sm" href="/">Sair</Link>
             </div>
         </div>
     </div>
