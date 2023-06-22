@@ -44,5 +44,6 @@ return [
         'message' => 'Este site utiliza cookies. Ao continuar navegando, você concorda com as condições.',
         'doc' => 'Saiba mais clicando aqui!',
         'agree' => 'Aceitar',
+        'link_title' => 'Política de Cookies',
     ],
 ];
