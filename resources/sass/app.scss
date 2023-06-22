@@ -1,0 +1,52 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+/*
+|--------------------------------------------------------------------------
+| Mouse
+|--------------------------------------------------------------------------
+*/
+.m-pointer {
+    cursor: pointer !important;
+}
+
+.m-default {
+    cursor: default !important;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Form
+|--------------------------------------------------------------------------
+*/
+.form-floating > .form-control:focus ~ label::after,
+.form-floating > .form-control:not(:placeholder-shown) ~ label::after,
+.form-floating > .form-control-plaintext ~ label::after,
+.form-floating > .form-select ~ label::after {
+    background-color: transparent;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Effects
+|--------------------------------------------------------------------------
+*/
+
+.shadow-inverse {
+    box-shadow: 0 -0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.shadow-sm-inverse {
+    box-shadow: 0 -0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.shadow-lg-inverse {
+    box-shadow: 0 -1rem 3rem rgba(0, 0, 0, 0.175);
+}
