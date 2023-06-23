@@ -76,6 +76,7 @@
                                 href="/storage/docs/terms.pdf"
                                 class="link-secondary"
                                 target="_blank"
+                                tabindex="-1"
                                 v-html="`Termos de uso`"
                             />
                         </label>
@@ -93,6 +94,7 @@
                                 href="/storage/docs/privacy.pdf"
                                 class="link-secondary"
                                 target="_blank"
+                                tabindex="-1"
                                 v-html="`Política de privacidade`"
                             />
                         </label>
