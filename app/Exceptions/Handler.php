@@ -15,11 +15,13 @@ use Inertia\{
 
 use Throwable;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Http\Client\RequestException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Exceptions\ThrottleRequestsException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use App\Exceptions\Custom\RequestException as CustomRequestException;
 
 class Handler extends ExceptionHandler
 {
@@ -62,6 +64,7 @@ class Handler extends ExceptionHandler
             $e instanceof AuthenticationException => new AuthenticationException(trans($e->getMessage()), $e->guards(), $e->redirectTo()),
             $e instanceof NotFoundHttpException => new NotFoundHttpException(trans('Could not find the route.'), $e, $e->getStatusCode(), $e->getHeaders()),
             $e instanceof ModelNotFoundException => new ModelNotFoundException($this->changeTextForModelException($e), $e->getCode(), $e),
+            $e instanceof RequestException => new CustomRequestException($e->response),
             default => $e,
         };
 
