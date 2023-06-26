@@ -178,11 +178,7 @@ import { Head } from '@inertiajs/vue2';
 import moment from 'moment';
 export default {
     components: { Head },
-
-    props: {
-        title: String,
-        label: String,
-    },
+    props: { title: String, label: String },
 
     data: (vm) => {
         return {
@@ -229,7 +225,7 @@ export default {
 
             this.emailVerify.timeout = time;
             const countDown = setInterval(() => this.emailVerify.timeout--, 1000);
-            setTimeout(() => clearInterval(countDown), this.emailVerify.timeout * 1000);
+            setTimeout(() => clearInterval(countDown), this.emailVerify.timeout * 1100);
         },
 
         async resendEmailVerify() {
@@ -237,7 +233,7 @@ export default {
             try {
                 const response = await axios.post(route('web.action.user.auth.email.verify.resend'));
                 this.$snotify.success(response.data.message);
-                sessionStorage.setItem('emailRequest', moment().add(30, 'seconds'))
+                sessionStorage.setItem('emailRequest', moment().add(30, 'seconds'));
                 this.countDown();
             }
             catch (error) { this.$showErrors(error); }
