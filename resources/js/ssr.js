@@ -4,6 +4,7 @@ import createServer from '@inertiajs/vue2/server';
 import { createRenderer } from 'vue-server-renderer';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import { vMaska } from "maska";
+import PortalVue from 'portal-vue';
 
 // Plugins
 import './Plugins/Snotify';
@@ -39,7 +40,7 @@ createServer(page =>
             return app;
         },
         setup({ el, App, props, plugin }) {
-            Vue.use(plugin).use(ZiggyVue).directive("maska", vMaska);
+            Vue.use(plugin).use(ZiggyVue).use(PortalVue).directive("maska", vMaska);
             new Vue({ render: h => h(App, props) }).$mount(el);
         },
     })
