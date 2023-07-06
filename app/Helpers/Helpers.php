@@ -20,11 +20,11 @@ if (!function_exists('onlyNumbers')) {
     /**
      * Prepare field to listen regex.
      *
-     * @param string $value
+     * @param null|string $value
      *
      * @return string
      */
-    function onlyNumbers(string $value): string
+    function onlyNumbers(?string $value = null): string
     {
         return Str::of($value)->replaceMatches('/[^0-9]+/', '')->value();
     }
