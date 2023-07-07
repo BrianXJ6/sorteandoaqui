@@ -141,7 +141,7 @@ class AuthController extends Controller
      */
     public function passwordUpdate(PasswordUpdateRequest $request): JsonResponse
     {
-        $this->AuthService->passwordUpdate($request->safe()->all());
+        $this->AuthService->passwordUpdate($request->credentials());
 
         return new JsonResponse(['message'  => __('passwords.reset'), 'redirect' => route('web.user.signIn')]);
     }

@@ -99,6 +99,11 @@
                             />
                         </label>
                     </div>
+                    <div
+                        id="g-recaptcha"
+                        class="g-recaptcha"
+                        :data-sitekey="googleRecaptchaPublicKey"
+                    />
                     <div class="d-grid gap-2 d-flex justify-content-end align-items-center">
                         <div v-if="signUpLoader" class="spinner-border" />
                         <button
@@ -120,8 +125,11 @@
 
 <script>
 import { Head, Link } from '@inertiajs/vue2';
+import GoogleRecaptcha from '../../../Mixins/GoogleRecaptcha.vue';
 export default {
     components: { Head, Link },
+    mixins: [GoogleRecaptcha],
+
     props: {
         title: String,
         description: String,
@@ -139,6 +147,7 @@ export default {
                 phone: '',
                 password: '',
                 referral_code: vm.referral_code,
+                recaptcha: '',
             }
         };
     },
@@ -147,14 +156,29 @@ export default {
         async signUpForm(el) {
             this.signUpLoader = true;
             try {
+                // Check recaptcha
+                this.signUp.recaptcha = grecaptcha.getResponse();
+                if (!this.signUp.recaptcha) this.recaptchaInvalid();
+
+                // Request
                 const response = await axios.post(route('web.action.user.auth.signUp'), this.$prepareData(this.signUp));
                 this.$clearForm(el.target, this.signUp);
                 const { message, redirect } = response.data;
                 this.$snotify.success(message).on('shown', () => this.$inertia.get(redirect));
             }
             catch (error) { this.$showErrors(error); }
-            finally { this.signUpLoader = false; }
+            finally {
+                this.signUpLoader = false;
+                grecaptcha.reset();
+            }
         },
     },
 }
 </script>
+
+<style scoped>
+.g-recaptcha {
+    transform: scale(0.87);
+    transform-origin: 0 0;
+}
+</style>

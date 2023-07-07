@@ -20,6 +20,7 @@
         "vite": "^4.3.9",
         "vue": "^2.7.14",
         "vue-moment": "^4.1.0",
+        "vue-plugin-load-script": "^2.1.1",
         "vue-server-renderer": "^2.7.14",
         "vue-snotify": "^3.2.1"
     }

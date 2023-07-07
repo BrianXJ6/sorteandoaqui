@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\User\Auth;
 
+use App\Rules\GoogleRecaptcha;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -18,6 +19,17 @@ class PasswordUpdateRequest extends FormRequest
             'token' => ['required', 'string'],
             'email' => ['required', 'email'],
             'password' => ['required', 'confirmed', Password::defaults()],
+            'recaptcha' => ['required', 'string', new GoogleRecaptcha],
         ];
+    }
+
+    /**
+     * Get credentials
+     *
+     * @return array
+     */
+    public function credentials(): array
+    {
+        return $this->safe()->only('token', 'email', 'password');
     }
 }

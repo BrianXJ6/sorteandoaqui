@@ -2,9 +2,13 @@
 
 namespace App\Http\Requests\User\Auth;
 
+use App\Rules\{
+    GoogleRecaptcha,
+    FirstAndLastName,
+};
+
 use App\Models\User;
 use App\Data\User\SignUpData;
-use App\Rules\FirstAndLastName;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Foundation\Http\FormRequest;
@@ -34,6 +38,7 @@ class SignUpRequest extends FormRequest
             'phone' => ['required', 'string', 'size:11', 'regex:/^\d{11}$/', Rule::unique(User::class)],
             'password' => ['required', 'string', Password::defaults()],
             'referral_code' => ['sometimes', 'required', 'string', Rule::exists(User::class)],
+            'recaptcha' => ['required', 'string', new GoogleRecaptcha],
         ];
     }
 
@@ -44,9 +49,7 @@ class SignUpRequest extends FormRequest
      */
     public function messages(): array
     {
-        return [
-            'referral_code.exists' => __('validation.custom.url_referral_code'),
-        ];
+        return ['referral_code.exists' => __('validation.custom.url_referral_code')];
     }
 
     /**

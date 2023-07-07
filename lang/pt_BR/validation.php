@@ -155,6 +155,8 @@ return [
     'custom' => [
         'url_referral_code' => 'O :attribute informado é inválido.',
         'first_and_last_name' => 'O campo :attribute é inválido, ao menos nome e sobrenome devem ser informados.',
+        'recaptcha.required' => 'Favor interagir com o :attribute.',
+        'recaptcha_invalid' => 'A verificação do :attribute falhou, tente novamente.',
     ],
 
     /*
@@ -169,5 +171,6 @@ return [
         'phone' => 'telefone',
         'password' => 'senha',
         'referral_code' => 'código de referência',
+        'recaptcha' => 'reCAPTCHA',
     ],
 ];
