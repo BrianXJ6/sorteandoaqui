@@ -50,8 +50,21 @@ class DashboardController extends Controller
         return Inertia::render('User/Sys/EmailVerify', [
             'title' => generateTitle($label = 'Verificar endereço de e-mail'),
             'label' => $label,
-            'id'   => $request->route()->parameter('id'),
+            'id' => $request->route()->parameter('id'),
             'hash' => $request->route()->parameter('hash'),
+        ]);
+    }
+
+    /**
+     * Email verify page
+     *
+     * @return \Inertia\Response
+     */
+    public function newRaffle(): Response
+    {
+        return Inertia::render('User/Raffles/NewRaffle', [
+            'title' => generateTitle($label = 'Nova rifa'),
+            'label' => $label,
         ]);
     }
 }
