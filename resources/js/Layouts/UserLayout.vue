@@ -36,6 +36,28 @@
                                             :href="route('web.user.dashboard.home')"
                                         >Início</Link>
                                     </li>
+                                    <li v-if="user.email_verified_at" class="nav-item dropdown">
+                                        <a
+                                            class="nav-link dropdown-toggle m-houver"
+                                            role="button"
+                                            data-bs-toggle="dropdown"
+                                            v-html="`Rifas`"
+                                        />
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li data-bs-dismiss="offcanvas">
+                                                <Link
+                                                    class="dropdown-item"
+                                                    :href="route('web.user.dashboard.raffles.my-raffles')"
+                                                >Minhas rifas</Link>
+                                            </li>
+                                            <li data-bs-dismiss="offcanvas">
+                                                <Link
+                                                    class="dropdown-item"
+                                                    :href="route('web.user.dashboard.raffles.new')"
+                                                >Nova rifa</Link>
+                                            </li>
+                                        </ul>
+                                    </li>
                                     <li class="nav-item dropdown">
                                         <a
                                             class="nav-link dropdown-toggle"

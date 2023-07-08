@@ -42,6 +42,7 @@ Route::controller(WebController::class)->group(function () {
         Route::prefix('painel')->name('dashboard.')->middleware(['auth:user'])->controller(UserDashboardController::class)->group(function () {
             Route::get('/', 'home')->name('home');
             Route::prefix('rifas')->name('raffles.')->middleware('verified:web.user.dashboard.home')->group(function () {
+                Route::get('/', 'myRaffles')->name('my-raffles');
                 Route::get('nova', 'newRaffle')->name('new');
             });
             Route::prefix('minha-conta')->name('my-account.')->group(function () {
