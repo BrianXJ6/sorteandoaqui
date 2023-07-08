@@ -60,11 +60,9 @@
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a
-                                            class="nav-link dropdown-toggle"
-                                            href="#"
+                                            class="nav-link dropdown-toggle m-houver"
                                             role="button"
                                             data-bs-toggle="dropdown"
-                                            aria-expanded="false"
                                             v-html="`Olá, ${user.nick}`"
                                         />
                                         <ul class="dropdown-menu dropdown-menu-end">
