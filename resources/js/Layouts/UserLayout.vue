@@ -10,15 +10,20 @@
                                 alt="logo-navbar-brand.png"
                             />
                         </Link>
-                        <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasNavbar"
-                            aria-controls="offcanvasNavbar"
-                        >
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+
+                        <div class="align-items-center d-inline-flex gap-4 position-relative">
+                            <Notifications class="d-md-none link-light" />
+
+                            <button
+                                class="navbar-toggler"
+                                type="button"
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasNavbar"
+                                aria-controls="offcanvasNavbar"
+                            >
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
                         <div
                             class="offcanvas bg-primary offcanvas-end"
                             tabindex="-1"
@@ -57,6 +62,9 @@
                                                 >Nova rifa</Link>
                                             </li>
                                         </ul>
+                                    </li>
+                                    <li class="nav-item dropdown d-none d-md-block">
+                                        <Notifications />
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a
@@ -101,8 +109,9 @@
 <script>
 import { Link } from '@inertiajs/vue2';
 import Logout from './../Components/User/Logout.vue';
+import Notifications from './UserComponents/Navbar/Notifications.vue';
 export default {
-    components: { Link, Logout },
+    components: { Link, Logout, Notifications },
 
     data: () => {
         return {
