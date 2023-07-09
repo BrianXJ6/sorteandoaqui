@@ -38,7 +38,7 @@ class SignUpRequest extends FormRequest
             'phone' => ['required', 'string', 'size:11', 'regex:/^\d{11}$/', Rule::unique(User::class)],
             'password' => ['required', 'string', Password::defaults()],
             'referral_code' => ['sometimes', 'required', 'string', Rule::exists(User::class)],
-            'recaptcha' => ['required', 'string', new GoogleRecaptcha],
+            'recaptcha' => [Rule::requiredIf(config('services.google_recaptcha.enabled')), 'string', new GoogleRecaptcha],
         ];
     }
 

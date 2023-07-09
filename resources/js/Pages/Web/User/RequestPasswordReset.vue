@@ -28,6 +28,7 @@
                         <label for="requestPasswordReset-email">E-mail</label>
                     </div>
                     <div
+                        v-if="recaptchaEnabled"
                         id="g-recaptcha"
                         class="g-recaptcha"
                         :data-sitekey="googleRecaptchaPublicKey"
@@ -79,9 +80,8 @@ export default {
         async requestPasswordResetForm(el) {
             this.requestPasswordResetLoader = true;
             try {
-                // Check recaptcha
-                this.requestPasswordReset.recaptcha = grecaptcha.getResponse();
-                if (!this.requestPasswordReset.recaptcha) this.recaptchaInvalid();
+                // Validate recaptcha
+                this.requestPasswordReset.recaptcha = this.validateRecaptcha();
 
                 // Request
                 const response = await axios.post(route('web.action.user.auth.password.email'), this.$prepareData(this.requestPasswordReset));
@@ -92,7 +92,7 @@ export default {
             catch (error) { this.$showErrors(error); }
             finally {
                 this.requestPasswordResetLoader = false;
-                grecaptcha.reset();
+                this.recaptchaReset();
             }
         },
     },

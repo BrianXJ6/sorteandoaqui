@@ -84,6 +84,7 @@
                         <label for="signIn-password">Senha</label>
                     </div>
                     <div
+                        v-if="recaptchaEnabled"
                         id="g-recaptcha"
                         class="g-recaptcha"
                         :data-sitekey="googleRecaptchaPublicKey"
@@ -142,9 +143,8 @@ export default {
         async signInForm(el) {
             this.signInLoader = true;
             try {
-                // Check recaptcha
-                this.signIn.recaptcha = grecaptcha.getResponse();
-                if (!this.signIn.recaptcha) this.recaptchaInvalid();
+                // Validate recaptcha
+                this.signIn.recaptcha = this.validateRecaptcha();
 
                 // Request
                 const response = await axios.post(route('web.action.user.auth.signIn'), this.$prepareData(this.signIn));
@@ -155,7 +155,7 @@ export default {
             catch (error) { this.$showErrors(error) }
             finally {
                 this.signInLoader = false;
-                grecaptcha.reset();
+                this.recaptchaReset();
             }
         },
     },

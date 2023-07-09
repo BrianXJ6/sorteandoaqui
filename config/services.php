@@ -24,6 +24,7 @@ return [
     ],
 
     'google_recaptcha' => [
+        'enabled' => env('GOOGLE_RECAPTCHA_ENABLED', false),
         'public_key' => env('GOOGLE_RECAPTCHA_PUBLIC_KEY'),
         'private_key' => env('GOOGLE_RECAPTCHA_PRIVATE_KEY'),
     ]

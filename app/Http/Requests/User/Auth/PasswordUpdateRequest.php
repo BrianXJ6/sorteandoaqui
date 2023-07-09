@@ -3,6 +3,7 @@
 namespace App\Http\Requests\User\Auth;
 
 use App\Rules\GoogleRecaptcha;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -19,7 +20,7 @@ class PasswordUpdateRequest extends FormRequest
             'token' => ['required', 'string'],
             'email' => ['required', 'email'],
             'password' => ['required', 'confirmed', Password::defaults()],
-            'recaptcha' => ['required', 'string', new GoogleRecaptcha],
+            'recaptcha' => [Rule::requiredIf(config('services.google_recaptcha.enabled')), 'string', new GoogleRecaptcha],
         ];
     }
 

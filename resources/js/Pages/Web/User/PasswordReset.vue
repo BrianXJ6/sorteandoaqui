@@ -51,6 +51,7 @@
                         <label for="passwordReset-password_confirmation">Repetir senha</label>
                     </div>
                     <div
+                        v-if="recaptchaEnabled"
                         id="g-recaptcha"
                         class="g-recaptcha"
                         :data-sitekey="googleRecaptchaPublicKey"
@@ -103,8 +104,8 @@ export default {
         async passwordResetForm(el) {
             this.passwordResetLoader = true;
             try {
-                this.passwordReset.recaptcha = grecaptcha.getResponse();
                 this.formValidation();
+                this.passwordReset.recaptcha = this.validateRecaptcha();
                 const response = await axios.post(route('web.action.user.auth.password.update'), this.$prepareData(this.passwordReset));
                 this.$clearForm(el.target, this.passwordReset);
                 const { message, redirect } = response.data;
@@ -113,13 +114,12 @@ export default {
             catch (error) { this.$showErrors(error); }
             finally {
                 this.passwordResetLoader = false;
-                grecaptcha.reset();
+                this.recaptchaReset();
             }
         },
 
         formValidation() {
-            if (!this.passwordReset.recaptcha) this.recaptchaInvalid();
-
+            // Confirm password
             if (this.passwordReset.password !== this.passwordReset.password_confirmation)
                 throw { response: { data: { errors: { password: ['O campo senha de confirmação não confere.'] } } } };
         }

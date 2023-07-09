@@ -100,6 +100,7 @@
                         </label>
                     </div>
                     <div
+                        v-if="recaptchaEnabled"
                         id="g-recaptcha"
                         class="g-recaptcha"
                         :data-sitekey="googleRecaptchaPublicKey"
@@ -156,9 +157,8 @@ export default {
         async signUpForm(el) {
             this.signUpLoader = true;
             try {
-                // Check recaptcha
-                this.signUp.recaptcha = grecaptcha.getResponse();
-                if (!this.signUp.recaptcha) this.recaptchaInvalid();
+                // Validate recaptcha
+                this.signUp.recaptcha = this.validateRecaptcha();
 
                 // Request
                 const response = await axios.post(route('web.action.user.auth.signUp'), this.$prepareData(this.signUp));
@@ -169,7 +169,7 @@ export default {
             catch (error) { this.$showErrors(error); }
             finally {
                 this.signUpLoader = false;
-                grecaptcha.reset();
+                this.recaptchaReset();
             }
         },
     },

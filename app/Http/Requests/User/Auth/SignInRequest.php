@@ -3,6 +3,7 @@
 namespace App\Http\Requests\User\Auth;
 
 use App\Rules\GoogleRecaptcha;
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class SignInRequest extends FormRequest
@@ -28,7 +29,7 @@ class SignInRequest extends FormRequest
             'option' => ['required', 'in:email,phone'],
             'field' => ['required', 'string'],
             'password' => ['required', 'string'],
-            'recaptcha' => ['required', 'string', new GoogleRecaptcha],
+            'recaptcha' => [Rule::requiredIf(config('services.google_recaptcha.enabled')), 'string', new GoogleRecaptcha],
         ];
     }
 
