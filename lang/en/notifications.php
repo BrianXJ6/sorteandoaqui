@@ -19,4 +19,9 @@ return [
         'button' => 'Verify Email',
         'message02' => 'This link will expire in :count minutes.',
     ],
+
+    'welcome' => [
+        'title' => 'Greeting',
+        'message' => 'Hello :Nick, nice to have you with us, we hope you enjoy this experience. 😉',
+    ],
 ];
