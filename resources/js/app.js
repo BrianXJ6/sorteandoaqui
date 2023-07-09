@@ -7,10 +7,11 @@ import { vMaska } from "maska";
 // Plugins
 import 'bootstrap';
 import './Plugins/Axios';
+import './Plugins/Moment';
 import './Plugins/Snotify';
 import './Plugins/ShowErrors';
-import './Plugins/Helpers/PrepareFormData';
 import './Plugins/Helpers/ClearFormData';
+import './Plugins/Helpers/PrepareFormData';
 
 // Layouts
 import AppLayout from './Layouts/AppLayout.vue';

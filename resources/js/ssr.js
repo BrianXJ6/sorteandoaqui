@@ -9,8 +9,8 @@ import PortalVue from 'portal-vue';
 // Plugins
 import './Plugins/Snotify';
 import './Plugins/ShowErrors';
-import './Plugins/Helpers/PrepareFormData';
 import './Plugins/Helpers/ClearFormData';
+import './Plugins/Helpers/PrepareFormData';
 
 // Layouts
 import AppLayout from './Layouts/AppLayout.vue';
