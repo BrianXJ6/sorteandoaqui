@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\Api\User\{
+    NotificationsController as UserNotificationsController,
+    AccountController as UserAccountController,
+};
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\User\AuthController as UserAuthController;
 use App\Http\Controllers\Auth\Admin\AuthController as AdminAuthController;
-use App\Http\Controllers\Api\User\AccountController as UserAccountController;
 use App\Http\Controllers\Api\Admin\AccountController as AdminAccountController;
 
 /*
@@ -50,6 +54,12 @@ Route::prefix('user')->name('user.')->group(function () {
         Route::prefix('acc')->name('acc.')->controller(UserAccountController::class)->group(function () {
             Route::put('update-personal-data', 'updatePersonalData')->name('update-personal-data');
             Route::put('update-access-data', 'updateAccessData')->name('update-access-data');
+        });
+
+        // Notifications routes
+        Route::prefix('notifications')->name('notifications.')->controller(UserNotificationsController::class)->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::post('{notification_id}/read', 'markRead')->name('mark-read')->whereUuid('notification_id');
         });
     });
 });

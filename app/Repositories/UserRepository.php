@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\User;
+use Illuminate\Support\Collection;
 use App\Repositories\Contracts\AuthLogin;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -72,5 +73,33 @@ class UserRepository extends BaseRepository implements AuthLogin
         $user = $this->resolveTarget($target);
 
         return $user->forceFill(['password' => $password, 'last_login' => now()])->save();
+    }
+
+    /**
+     * Get notifications list
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function notificationsList(): Collection
+    {
+        /** @var \App\Models\User */
+        $user = auth()->user();
+
+        return $user->notifications()->select(['id', 'data', 'read_at', 'created_at'])->latest()->get();
+    }
+
+    /**
+     * Mark notification as read
+     *
+     * @param string $notificationId
+     *
+     * @return void
+     */
+    public function markRead(string $notificationId): void
+    {
+        /** @var \App\Models\User */
+        $user = auth()->user();
+
+        $user->notifications()->where('id', $notificationId)->update(['read_at' => now()]);
     }
 }
