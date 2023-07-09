@@ -1,5 +1,4 @@
 <script>
-import { loadScript } from "vue-plugin-load-script";
 export default {
     data: () => {
         return {
@@ -11,12 +10,10 @@ export default {
         recaptchaInvalid() { throw { response: { data: { message: 'Favor interagir com o reCAPTCHA!' } } }; }
     },
 
-    created() {
-        loadScript('https://www.google.com/recaptcha/api.js')
-            .then(() => {
-                if (grecaptcha.hasOwnProperty('render'))
-                    grecaptcha.render('g-recaptcha');
-            });
+    mounted() {
+        const recaptchaScript = document.createElement('script');
+        recaptchaScript.setAttribute('src', 'https://www.google.com/recaptcha/api.js');
+        document.head.appendChild(recaptchaScript);
     }
 };
 </script>
