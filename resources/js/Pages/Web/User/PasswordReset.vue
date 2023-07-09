@@ -72,10 +72,10 @@
 </template>
 
 <script>
-import { Head, Link } from '@inertiajs/vue2';
+import { Head } from '@inertiajs/vue2';
 import GoogleRecaptcha from '../../../Mixins/GoogleRecaptcha.vue';
 export default {
-    components: { Head, Link },
+    components: { Head },
     mixins: [GoogleRecaptcha],
 
     props: {
