@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import store from './Store';
 import { createInertiaApp } from '@inertiajs/vue2';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import PortalVue from 'portal-vue';
@@ -39,6 +40,6 @@ createInertiaApp({
     },
     setup({ el, App, props, plugin }) {
         Vue.use(plugin).use(ZiggyVue).use(PortalVue).directive("maska", vMaska);
-        new Vue({ render: h => h(App, props) }).$mount(el);
+        new Vue({ store, render: h => h(App, props) }).$mount(el);
     },
 });
