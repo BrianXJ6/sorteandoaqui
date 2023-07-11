@@ -27,6 +27,12 @@
                         />
                         <label for="requestPasswordReset-email">E-mail</label>
                     </div>
+                    <div
+                        v-if="recaptchaEnabled"
+                        id="g-recaptcha"
+                        class="g-recaptcha"
+                        :data-sitekey="googleRecaptchaPublicKey"
+                    />
                     <div class="d-grid gap-2 d-flex justify-content-end align-items-center">
                         <div v-if="requestPasswordResetLoader" class="spinner-border" />
                         <button
@@ -48,8 +54,11 @@
 
 <script>
 import { Head, Link } from '@inertiajs/vue2';
+import GoogleRecaptcha from '../../../Mixins/GoogleRecaptcha.vue';
 export default {
     components: { Head, Link },
+    mixins: [GoogleRecaptcha],
+
     props: {
         title: String,
         description: String,
@@ -60,7 +69,10 @@ export default {
     data: () => {
         return {
             requestPasswordResetLoader: false,
-            requestPasswordReset: { email: '' },
+            requestPasswordReset: {
+                email: '',
+                recaptcha: '',
+            },
         };
     },
 
@@ -68,13 +80,20 @@ export default {
         async requestPasswordResetForm(el) {
             this.requestPasswordResetLoader = true;
             try {
+                // Validate recaptcha
+                this.requestPasswordReset.recaptcha = this.validateRecaptcha();
+
+                // Request
                 const response = await axios.post(route('web.action.user.auth.password.email'), this.$prepareData(this.requestPasswordReset));
                 this.$clearForm(el.target, this.requestPasswordReset);
                 const { message, redirect } = response.data;
                 this.$snotify.success(message).on('shown', () => this.$inertia.get(redirect));
             }
             catch (error) { this.$showErrors(error); }
-            finally { this.requestPasswordResetLoader = false; }
+            finally {
+                this.requestPasswordResetLoader = false;
+                this.recaptchaReset();
+            }
         },
     },
 }

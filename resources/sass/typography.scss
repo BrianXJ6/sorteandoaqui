@@ -1,0 +1,40 @@
+// Font Family
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Architects Daughter', cursive;
+// @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat:wght@300;400;700&display=swap');
+
+// Normal font
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Montserrat-Regular.ttf'), local('Montserrat-Regular'), local('Montserrat'),
+        url('./../fonts/Montserrat/Montserrat-Regular.ttf') format('TrueType');
+}
+
+// Title font
+@font-face {
+    font-family: 'Architects Daughter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('ArchitectsDaughter-Regular.ttf'), local('ArchitectsDaughter-Regular'), local('Architects Daughter'),
+        url('./../fonts/Architects_Daughter/ArchitectsDaughter-Regular.ttf') format('TrueType');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.font-title {
+    font-family: 'Architects Daughter', cursive;
+}

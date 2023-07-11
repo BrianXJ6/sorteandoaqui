@@ -10,15 +10,20 @@
                                 alt="logo-navbar-brand.png"
                             />
                         </Link>
-                        <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasNavbar"
-                            aria-controls="offcanvasNavbar"
-                        >
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+
+                        <div class="align-items-center d-inline-flex gap-4 position-relative">
+                            <Notifications class="d-md-none link-light" />
+
+                            <button
+                                class="navbar-toggler"
+                                type="button"
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasNavbar"
+                                aria-controls="offcanvasNavbar"
+                            >
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
                         <div
                             class="offcanvas bg-primary offcanvas-end"
                             tabindex="-1"
@@ -36,13 +41,36 @@
                                             :href="route('web.user.dashboard.home')"
                                         >Início</Link>
                                     </li>
-                                    <li class="nav-item dropdown">
+                                    <li v-if="user.email_verified_at" class="nav-item dropdown">
                                         <a
-                                            class="nav-link dropdown-toggle"
-                                            href="#"
+                                            class="nav-link dropdown-toggle m-houver"
                                             role="button"
                                             data-bs-toggle="dropdown"
-                                            aria-expanded="false"
+                                            v-html="`Rifas`"
+                                        />
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li data-bs-dismiss="offcanvas">
+                                                <Link
+                                                    class="dropdown-item"
+                                                    :href="route('web.user.dashboard.raffles.my-raffles')"
+                                                >Minhas rifas</Link>
+                                            </li>
+                                            <li data-bs-dismiss="offcanvas">
+                                                <Link
+                                                    class="dropdown-item"
+                                                    :href="route('web.user.dashboard.raffles.new')"
+                                                >Nova rifa</Link>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown d-none d-md-block">
+                                        <Notifications />
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a
+                                            class="nav-link dropdown-toggle m-houver"
+                                            role="button"
+                                            data-bs-toggle="dropdown"
                                             v-html="`Olá, ${user.nick}`"
                                         />
                                         <ul class="dropdown-menu dropdown-menu-end">
@@ -81,8 +109,9 @@
 <script>
 import { Link } from '@inertiajs/vue2';
 import Logout from './../Components/User/Logout.vue';
+import Notifications from './UserComponents/Navbar/Notifications.vue';
 export default {
-    components: { Link, Logout },
+    components: { Link, Logout, Notifications },
 
     data: () => {
         return {

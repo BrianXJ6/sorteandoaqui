@@ -1,15 +1,17 @@
 import Vue from 'vue';
+import store from './Store';
 import { createInertiaApp } from '@inertiajs/vue2';
 import createServer from '@inertiajs/vue2/server';
 import { createRenderer } from 'vue-server-renderer';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import { vMaska } from "maska";
+import PortalVue from 'portal-vue';
 
 // Plugins
 import './Plugins/Snotify';
 import './Plugins/ShowErrors';
-import './Plugins/Helpers/PrepareFormData';
 import './Plugins/Helpers/ClearFormData';
+import './Plugins/Helpers/PrepareFormData';
 
 // Layouts
 import AppLayout from './Layouts/AppLayout.vue';
@@ -39,8 +41,8 @@ createServer(page =>
             return app;
         },
         setup({ el, App, props, plugin }) {
-            Vue.use(plugin).use(ZiggyVue).directive("maska", vMaska);
-            new Vue({ render: h => h(App, props) }).$mount(el);
+            Vue.use(plugin).use(ZiggyVue).use(PortalVue).directive("maska", vMaska);
+            new Vue({ store, render: h => h(App, props) }).$mount(el);
         },
     })
 );

@@ -50,7 +50,12 @@
                         />
                         <label for="passwordReset-password_confirmation">Repetir senha</label>
                     </div>
-
+                    <div
+                        v-if="recaptchaEnabled"
+                        id="g-recaptcha"
+                        class="g-recaptcha"
+                        :data-sitekey="googleRecaptchaPublicKey"
+                    />
                     <div class="d-grid gap-2 d-flex justify-content-end align-items-center">
                         <div v-if="passwordResetLoader" class="spinner-border" />
                         <button
@@ -67,9 +72,12 @@
 </template>
 
 <script>
-import { Head, Link } from '@inertiajs/vue2';
+import { Head } from '@inertiajs/vue2';
+import GoogleRecaptcha from '../../../Mixins/GoogleRecaptcha.vue';
 export default {
-    components: { Head, Link },
+    components: { Head },
+    mixins: [GoogleRecaptcha],
+
     props: {
         title: String,
         description: String,
@@ -87,6 +95,7 @@ export default {
                 email: vm.email,
                 password: '',
                 password_confirmation: '',
+                recaptcha: '',
             }
         };
     },
@@ -95,17 +104,22 @@ export default {
         async passwordResetForm(el) {
             this.passwordResetLoader = true;
             try {
-                this.confirmPasswords();
+                this.formValidation();
+                this.passwordReset.recaptcha = this.validateRecaptcha();
                 const response = await axios.post(route('web.action.user.auth.password.update'), this.$prepareData(this.passwordReset));
                 this.$clearForm(el.target, this.passwordReset);
                 const { message, redirect } = response.data;
                 this.$snotify.success(message).on('shown', () => this.$inertia.get(redirect));
             }
             catch (error) { this.$showErrors(error); }
-            finally { this.passwordResetLoader = false; }
+            finally {
+                this.passwordResetLoader = false;
+                this.recaptchaReset();
+            }
         },
 
-        confirmPasswords() {
+        formValidation() {
+            // Confirm password
             if (this.passwordReset.password !== this.passwordReset.password_confirmation)
                 throw { response: { data: { errors: { password: ['O campo senha de confirmação não confere.'] } } } };
         }

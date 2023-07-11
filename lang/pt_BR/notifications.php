@@ -21,4 +21,9 @@ return [
         'button' => 'Verificar E-mail',
         'message02' => 'Este link expirará em :count minutos.',
     ],
+
+    'welcome' => [
+        'title' => 'Saudações',
+        'message' => 'Olá :Nick, que prazer ter você conosco, esperamos que curta essa experiência. 😉',
+    ],
 ];

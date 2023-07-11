@@ -1,15 +1,18 @@
 import Vue from 'vue';
+import store from './Store';
 import { createInertiaApp } from '@inertiajs/vue2';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
+import PortalVue from 'portal-vue';
 import { vMaska } from "maska";
 
 // Plugins
 import 'bootstrap';
 import './Plugins/Axios';
+import './Plugins/Moment';
 import './Plugins/Snotify';
 import './Plugins/ShowErrors';
-import './Plugins/Helpers/PrepareFormData';
 import './Plugins/Helpers/ClearFormData';
+import './Plugins/Helpers/PrepareFormData';
 
 // Layouts
 import AppLayout from './Layouts/AppLayout.vue';
@@ -36,7 +39,7 @@ createInertiaApp({
         return app;
     },
     setup({ el, App, props, plugin }) {
-        Vue.use(plugin).use(ZiggyVue).directive("maska", vMaska);
-        new Vue({ render: h => h(App, props) }).$mount(el);
+        Vue.use(plugin).use(ZiggyVue).use(PortalVue).directive("maska", vMaska);
+        new Vue({ store, render: h => h(App, props) }).$mount(el);
     },
 });

@@ -83,6 +83,12 @@
                         />
                         <label for="signIn-password">Senha</label>
                     </div>
+                    <div
+                        v-if="recaptchaEnabled"
+                        id="g-recaptcha"
+                        class="g-recaptcha"
+                        :data-sitekey="googleRecaptchaPublicKey"
+                    />
                     <div class="d-grid gap-2 d-flex justify-content-end align-items-center">
                         <div v-if="signInLoader" class="spinner-border" />
                         <button
@@ -109,8 +115,11 @@
 
 <script>
 import { Head, Link } from '@inertiajs/vue2';
+import GoogleRecaptcha from '../../../Mixins/GoogleRecaptcha.vue';
 export default {
     components: { Head, Link },
+    mixins: [GoogleRecaptcha],
+
     props: {
         title: String,
         description: String,
@@ -121,7 +130,12 @@ export default {
     data: () => {
         return {
             signInLoader: false,
-            signIn: { option: 'email', field: '', password: '' },
+            signIn: {
+                option: 'email',
+                field: '',
+                password: '',
+                recaptcha: '',
+            },
         };
     },
 
@@ -129,13 +143,20 @@ export default {
         async signInForm(el) {
             this.signInLoader = true;
             try {
+                // Validate recaptcha
+                this.signIn.recaptcha = this.validateRecaptcha();
+
+                // Request
                 const response = await axios.post(route('web.action.user.auth.signIn'), this.$prepareData(this.signIn));
                 this.$clearForm(el.target, this.signIn, ['option']);
                 const { message, redirect } = response.data;
                 this.$snotify.success(message).on('shown', () => this.$inertia.get(redirect));
             }
-            catch (error) { this.$showErrors(error); }
-            finally { this.signInLoader = false; }
+            catch (error) { this.$showErrors(error) }
+            finally {
+                this.signInLoader = false;
+                this.recaptchaReset();
+            }
         },
     },
 }

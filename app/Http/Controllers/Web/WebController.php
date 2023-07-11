@@ -25,4 +25,19 @@ class WebController extends Controller
             'keywords' => 'Keywords...',
         ]);
     }
+
+    /**
+     * Contact page
+     *
+     * @return \Inertia\Response
+     */
+    public function contact(): Response
+    {
+        return Inertia::render('Web/Contact', [
+            'title' => generateTitle($label = 'Contato'),
+            'label' => $label,
+            'description' => 'Description...',
+            'keywords' => 'Keywords...',
+        ]);
+    }
 }

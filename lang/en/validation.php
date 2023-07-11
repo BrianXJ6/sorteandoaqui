@@ -168,6 +168,8 @@ return [
     'custom' => [
         'url_referral_code' => 'The :attribute provided is invalid.',
         'first_and_last_name' => 'The :attribute field is invalid, at least first and last name must be entered.',
+        'recaptcha.required' => 'Please interact with the :attribute.',
+        'recaptcha_invalid' => ':attribute check failed, please try again.',
     ],
 
     /*
@@ -177,5 +179,6 @@ return [
     */
     'attributes' => [
         'cpf' => 'CPF',
+        'recaptcha' => 'reCAPTCHA',
     ],
 ];

@@ -4,7 +4,7 @@
     "This action is unauthorized.": "Ops! você não tem permissão para fazer isso!",
     "Too Many Attempts.": "Muitas tentativas, por favor, aguarde!",
     "Too Many Requests": "Muitas solicitações, por favor, aguarde!",
-    "Unauthenticated.": "é necessário está autenticado!",
+    "Unauthenticated.": "É necessário está autenticado!",
     "Unauthorized": "Não autorizado!",
     "Payment Required": "Pagamento Requerido!",
     "Forbidden": "Proibido!",
@@ -12,8 +12,8 @@
     "Page Expired": "Página expirada",
     "Server Error": "Erro interno!",
     "Service Unavailable": "Serviço não disponível!",
-    "no results found": "nenhum resultado encontrado",
-    "no results found for :model": "nenhum resultado encontrado para :model",
+    "no results found": "Nenhum resultado encontrado",
+    "no results found for :model": "Nenhum resultado encontrado para :model",
     "with ID: :id.": "com ID: :id.",
     "Could not find the route.": "Não foi possível encontrar a rota."
 }

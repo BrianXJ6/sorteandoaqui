@@ -1,4 +1,4 @@
-<div class="js-cookie-consent cookie-consent fixed-bottom bg-gradient text-bg-success text-center shadow-inverse">
+<div class="js-cookie-consent cookie-consent fixed-bottom bg-gradient text-bg-primary text-center shadow-inverse">
     <div class="container py-4">
         <p class="m-0">{!! __('messages.cookie.message') !!}</p>
         <p>
