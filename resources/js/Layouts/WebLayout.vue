@@ -31,7 +31,7 @@
                             <div class="offcanvas-body text-center">
                                 <ul class="navbar-nav justify-content-end flex-grow-1">
                                     <li class="nav-item" data-bs-dismiss="offcanvas">
-                                        <Link class="nav-link" :href="route('web.home')">Home</Link>
+                                        <Link class="nav-link" :href="route('web.home')">Início</Link>
                                     </li>
                                     <li class="nav-item" data-bs-dismiss="offcanvas">
                                         <Link class="nav-link" :href="route('web.contact')">Contato</Link>
