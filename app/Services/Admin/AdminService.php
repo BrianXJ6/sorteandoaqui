@@ -3,7 +3,10 @@
 namespace App\Services\Admin;
 
 use App\Models\Admin;
+use App\Mail\WebContact;
 use App\Services\BaseService;
+use App\Data\Open\WebContactData;
+use Illuminate\Support\Facades\Mail;
 use App\Repositories\AdminRepository;
 use App\Data\Admin\UpdatePersonalData;
 
@@ -34,5 +37,17 @@ class AdminService extends BaseService
         if (empty($filteredData = array_filter($data->all()))) return $admin;
 
         return $this->repository->update($filteredData, $admin);
+    }
+
+    /**
+     * Contact form from web
+     *
+     * @param \App\Data\Open\WebContactData $data
+     *
+     * @return void
+     */
+    public function webContact(WebContactData $data): void
+    {
+        Mail::to(config('mail.from.address'))->send(new WebContact($data));
     }
 }

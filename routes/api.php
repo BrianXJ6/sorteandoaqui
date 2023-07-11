@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\User\{
 };
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\Auth\User\AuthController as UserAuthController;
 use App\Http\Controllers\Auth\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Api\Admin\AccountController as AdminAccountController;
@@ -16,7 +17,9 @@ use App\Http\Controllers\Api\Admin\AccountController as AdminAccountController;
 |--------------------------------------------------------------------------
 */
 
-// ...
+Route::prefix('open')->name('open.')->controller(ApiController::class)->group(function () {
+    Route::post('contact', 'webContact')->name('web-contact');
+});
 
 /*
 |--------------------------------------------------------------------------

@@ -26,6 +26,7 @@ use App\Http\Controllers\Web\WebController;
 
 Route::controller(WebController::class)->group(function () {
     Route::get('/', 'home')->name('home');
+    Route::get('contato', 'contact')->name('contact');
 
     /*
     |--------------------------------------------------------------------------

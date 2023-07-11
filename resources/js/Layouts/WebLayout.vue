@@ -33,6 +33,9 @@
                                     <li class="nav-item" data-bs-dismiss="offcanvas">
                                         <Link class="nav-link" :href="route('web.home')">Home</Link>
                                     </li>
+                                    <li class="nav-item" data-bs-dismiss="offcanvas">
+                                        <Link class="nav-link" :href="route('web.contact')">Contato</Link>
+                                    </li>
                                     <li class="nav-item dropdown">
                                         <a
                                             class="nav-link dropdown-toggle"
