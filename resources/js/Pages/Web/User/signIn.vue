@@ -161,10 +161,3 @@ export default {
     },
 }
 </script>
-
-<style scoped>
-.g-recaptcha {
-    transform: scale(0.87);
-    transform-origin: 0 0;
-}
-</style>
