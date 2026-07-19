@@ -20,7 +20,7 @@ Sorteando Aqui" is a project aimed at creating an online platform for prize draw
 ## Helper
 
 ```shell
-alias sorteando-sail='sh $([ -f sorteando-sail ] && echo sorteando-sail || echo vendor/bin/sail)'
+alias sail2='sh $([ -f sail2 ] && echo sail2 || echo vendor/bin/sail)'
 ```
 
 # Backup README
