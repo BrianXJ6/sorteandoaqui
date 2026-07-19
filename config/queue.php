@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Queue Connection Name
@@ -12,8 +11,7 @@ return [
     | syntax for each. The default queue connection is defined below.
     |
     */
-
-    'default' => env('QUEUE_CONNECTION', 'database'),
+    'default' => env('QUEUE_CONNECTION', 'redis'),
 
     /*
     |--------------------------------------------------------------------------
@@ -28,9 +26,7 @@ return [
     |          "deferred", "background", "failover", "null"
     |
     */
-
     'connections' => [
-
         'sync' => [
             'driver' => 'sync',
         ],
@@ -88,7 +84,6 @@ return [
                 'deferred',
             ],
         ],
-
     ],
 
     /*
@@ -101,7 +96,6 @@ return [
     | connection and table which has been defined by your application.
     |
     */
-
     'batching' => [
         'database' => env('DB_CONNECTION', 'sqlite'),
         'table' => 'job_batches',
@@ -119,11 +113,9 @@ return [
     | Supported drivers: "database-uuids", "dynamodb", "file", "null"
     |
     */
-
     'failed' => [
         'driver' => env('QUEUE_FAILED_DRIVER', 'database-uuids'),
         'database' => env('DB_CONNECTION', 'sqlite'),
         'table' => 'failed_jobs',
     ],
-
 ];

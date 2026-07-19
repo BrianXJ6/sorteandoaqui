@@ -3,7 +3,6 @@
 use Illuminate\Support\Str;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Cache Store
@@ -14,8 +13,7 @@ return [
     | specified when running a cache operation inside the application.
     |
     */
-
-    'default' => env('CACHE_STORE', 'database'),
+    'default' => env('CACHE_STORE', 'redis'),
 
     /*
     |--------------------------------------------------------------------------
@@ -31,9 +29,7 @@ return [
     |                    "session", "failover", "null"
     |
     */
-
     'stores' => [
-
         'array' => [
             'driver' => 'array',
             'serialize' => false,
@@ -104,7 +100,6 @@ return [
                 'array',
             ],
         ],
-
     ],
 
     /*
@@ -117,7 +112,6 @@ return [
     | that reason, you may prefix every cache key to avoid collisions.
     |
     */
-
     'prefix' => env('CACHE_PREFIX', Str::slug((string) env('APP_NAME', 'laravel')).'-cache-'),
 
     /*
@@ -130,7 +124,5 @@ return [
     | cache to prevent gadget chain attacks if your APP_KEY is leaked.
     |
     */
-
     'serializable_classes' => false,
-
 ];

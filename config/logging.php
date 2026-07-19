@@ -6,7 +6,6 @@ use Monolog\Handler\SyslogUdpHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Log Channel
@@ -17,7 +16,6 @@ return [
     | the channels present in the list of "channels" configured below.
     |
     */
-
     'default' => env('LOG_CHANNEL', 'stack'),
 
     /*
@@ -30,7 +28,6 @@ return [
     | your application ready for upcoming major versions of dependencies.
     |
     */
-
     'deprecations' => [
         'channel' => env('LOG_DEPRECATIONS_CHANNEL', 'null'),
         'trace' => env('LOG_DEPRECATIONS_TRACE', false),
@@ -49,9 +46,7 @@ return [
     |                    "errorlog", "monolog", "custom", "stack"
     |
     */
-
     'channels' => [
-
         'stack' => [
             'driver' => 'stack',
             'channels' => explode(',', (string) env('LOG_STACK', 'single')),
@@ -126,7 +121,5 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
-
     ],
-
 ];

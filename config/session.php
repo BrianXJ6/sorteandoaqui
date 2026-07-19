@@ -3,7 +3,6 @@
 use Illuminate\Support\Str;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Session Driver
@@ -17,8 +16,7 @@ return [
     |            "redis", "dynamodb", "array"
     |
     */
-
-    'driver' => env('SESSION_DRIVER', 'database'),
+    'driver' => env('SESSION_DRIVER', 'redis'),
 
     /*
     |--------------------------------------------------------------------------
@@ -31,9 +29,7 @@ return [
     | indicate that via the expire_on_close configuration option.
     |
     */
-
     'lifetime' => (int) env('SESSION_LIFETIME', 120),
-
     'expire_on_close' => env('SESSION_EXPIRE_ON_CLOSE', false),
 
     /*
@@ -46,7 +42,6 @@ return [
     | automatically by Laravel and you may use the session like normal.
     |
     */
-
     'encrypt' => env('SESSION_ENCRYPT', false),
 
     /*
@@ -59,7 +54,6 @@ return [
     | are free to provide another location where they should be stored.
     |
     */
-
     'files' => storage_path('framework/sessions'),
 
     /*
@@ -72,7 +66,6 @@ return [
     | correspond to a connection in your database configuration options.
     |
     */
-
     'connection' => env('SESSION_CONNECTION'),
 
     /*
@@ -85,7 +78,6 @@ return [
     | for you; however, you're welcome to change this to another table.
     |
     */
-
     'table' => env('SESSION_TABLE', 'sessions'),
 
     /*
@@ -100,7 +92,6 @@ return [
     | Affects: "dynamodb", "memcached", "redis"
     |
     */
-
     'store' => env('SESSION_STORE'),
 
     /*
@@ -113,7 +104,6 @@ return [
     | happen on a given request. By default, the odds are 2 out of 100.
     |
     */
-
     'lottery' => [2, 100],
 
     /*
@@ -126,10 +116,9 @@ return [
     | since doing so does not grant a meaningful security improvement.
     |
     */
-
     'cookie' => env(
         'SESSION_COOKIE',
-        Str::slug((string) env('APP_NAME', 'laravel')).'-session'
+        Str::slug((string) env('APP_NAME', 'laravel')) . '-session'
     ),
 
     /*
@@ -142,7 +131,6 @@ return [
     | your application, but you're free to change this when necessary.
     |
     */
-
     'path' => env('SESSION_PATH', '/'),
 
     /*
@@ -155,7 +143,6 @@ return [
     | domain without subdomains. Typically, this shouldn't be changed.
     |
     */
-
     'domain' => env('SESSION_DOMAIN'),
 
     /*
@@ -168,7 +155,6 @@ return [
     | the cookie from being sent to you when it can't be done securely.
     |
     */
-
     'secure' => env('SESSION_SECURE_COOKIE'),
 
     /*
@@ -181,7 +167,6 @@ return [
     | the HTTP protocol. It's unlikely you should disable this option.
     |
     */
-
     'http_only' => env('SESSION_HTTP_ONLY', true),
 
     /*
@@ -198,7 +183,6 @@ return [
     | Supported: "lax", "strict", "none", null
     |
     */
-
     'same_site' => env('SESSION_SAME_SITE', 'lax'),
 
     /*
@@ -211,7 +195,6 @@ return [
     | when flagged "secure" and the Same-Site attribute is set to "none".
     |
     */
-
     'partitioned' => env('SESSION_PARTITIONED_COOKIE', false),
 
     /*
@@ -227,7 +210,5 @@ return [
     | Supported: "json", "php"
     |
     */
-
     'serialization' => 'json',
-
 ];
