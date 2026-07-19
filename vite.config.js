@@ -1,24 +1,28 @@
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
-import { bunny } from 'laravel-vite-plugin/fonts';
 import tailwindcss from '@tailwindcss/vite';
+import react from '@vitejs/plugin-react';
+import laravel from 'laravel-vite-plugin';
+import dns from 'node:dns';
+import { defineConfig } from 'vite';
+
+dns.setDefaultResultOrder('verbatim');
 
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: 'resources/js/app.tsx',
+            ssr: 'resources/js/ssr.tsx',
             refresh: true,
-            fonts: [
-                bunny('Instrument Sans', {
-                    weights: [400, 500, 600],
-                }),
-            ],
         }),
+        react(),
         tailwindcss(),
     ],
     server: {
+        host: '0.0.0.0',
+        hmr: {
+            host: 'localhost',
+        },
         watch: {
-            ignored: ['**/storage/framework/views/**'],
+            ignored: ['**/.claude/**', '**/storage/framework/views/**'],
         },
     },
 });
