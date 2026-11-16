@@ -79,9 +79,11 @@ carrega regras de validação.
   Action recebe os parâmetros direto — sem DTO e sem interface.
 - Fora de requisição web (Job, comando, Suporte), o DTO é montado na mão.
 
-**Pendências de verificação (na hora de instalar/implementar, não agora):**
-compatibilidade do `spatie/laravel-data` com Laravel 13 e PHP 8.5, e
-comportamento exato do `from()` com `validated()`.
+**Verificado na instalação (`spatie/laravel-data` 4.23):** compatível com
+Laravel 13 e PHP 8.5. `Dto::from($request->validated())` mapeia snake_case para
+camelCase e converte os tipos (string numérica vira `int`, valor vira Enum), com
+`name_mapping_strategy.input` configurada para `SnakeCaseMapper` em
+`config/data.php`. Usamos `validated()` (array) e não `safe()`.
 
 ## 2. Organização de pastas (fechado)
 
@@ -150,7 +152,7 @@ subpastas por domínio (`pages/raffles/`, `components/raffles/`).
    só. Exceção: o Laravel Auditing, que usa observer internamente.
 6. **DTO sem `BaseDto` próprio.** Os DTOs estendem direto o `Data` do
    `spatie/laravel-data`. O mapeamento snake_case → camelCase fica na
-   configuração global do pacote (a confirmar na hora de instalar). O
+   configuração global do pacote (`name_mapping_strategy.input`, já configurada). O
    XpandeAI usa um `BaseDTO` para "isolar o pacote", mas trocar o pacote
    mexeria em todos os DTOs de qualquer forma.
 
