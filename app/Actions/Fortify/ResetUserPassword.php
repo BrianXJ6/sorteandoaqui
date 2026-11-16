@@ -14,7 +14,10 @@ class ResetUserPassword implements ResetsUserPasswords
     /**
      * Validate and reset the user's forgotten password.
      *
+     * @param \App\Models\User $user
      * @param array<string, string> $input
+     *
+     * @return void
      */
     public function reset(User $user, array $input): void
     {

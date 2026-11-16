@@ -12,6 +12,8 @@ trait ProfileValidationRules
     /**
      * Get the validation rules used to validate user profiles.
      *
+     * @param int|null $userId
+     *
      * @return array<string, array<int, Unique|ValidationRule|array<mixed>|string>>
      */
     protected function profileRules(?int $userId = null): array
@@ -34,6 +36,8 @@ trait ProfileValidationRules
 
     /**
      * Get the validation rules used to validate user emails.
+     *
+     * @param int|null $userId
      *
      * @return array<int, Unique|ValidationRule|array<mixed>|string>
      */

@@ -18,6 +18,8 @@ class FortifyServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
+     *
+     * @return void
      */
     public function register(): void
     {
@@ -26,6 +28,8 @@ class FortifyServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap any application services.
+     *
+     * @return void
      */
     public function boot(): void
     {
@@ -36,6 +40,8 @@ class FortifyServiceProvider extends ServiceProvider
 
     /**
      * Configure Fortify actions.
+     *
+     * @return void
      */
     private function configureActions(): void
     {
@@ -45,6 +51,8 @@ class FortifyServiceProvider extends ServiceProvider
 
     /**
      * Configure Fortify views.
+     *
+     * @return void
      */
     private function configureViews(): void
     {
@@ -78,6 +86,8 @@ class FortifyServiceProvider extends ServiceProvider
 
     /**
      * Configure rate limiting.
+     *
+     * @return void
      */
     private function configureRateLimiting(): void
     {

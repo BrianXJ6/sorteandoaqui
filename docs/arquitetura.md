@@ -181,6 +181,11 @@ global, isso decide como toda consulta é escopada.
 
 - **O texto do docblock é em inglês**, como todo o código (identificadores,
   mensagens de commit técnicas). Documentação fora do código segue pt_BR.
+- **Escopo:** todo método das classes de `app/`. Testes e migrations ficam de
+  fora. Classes simples usam FQCN (`\App\Models\User`); os tipos genéricos de
+  array que o próprio Laravel já traz (ex: `array<string, ValidationRule|...>`)
+  mantêm os nomes importados, porque em FQCN virariam linhas ilegíveis. Os
+  métodos de `void` levam `@return void`.
 - **Comentários no meio do código são evitados** — sujam a leitura. A
   explicação mora no docblock do método, não nas linhas de dentro. Só entra
   um comentário interno quando há uma **necessidade real**, ou seja, um

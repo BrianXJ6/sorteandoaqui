@@ -15,6 +15,10 @@ class SecurityController extends Controller
 {
     /**
      * Show the user's security settings page.
+     *
+     * @param \App\Http\Requests\Settings\TwoFactorAuthenticationRequest $request
+     *
+     * @return \Inertia\Response
      */
     public function edit(TwoFactorAuthenticationRequest $request): Response
     {
@@ -52,6 +56,10 @@ class SecurityController extends Controller
 
     /**
      * Update the user's password.
+     *
+     * @param \App\Http\Requests\Settings\PasswordUpdateRequest $request
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(PasswordUpdateRequest $request): RedirectResponse
     {
