@@ -233,7 +233,7 @@ logado pode criar um colaborador.
 
 ### 🔴 Achado crítico de segurança — backdoor hardcoded
 
-`AdminLoginController::login` aceita a senha literal `@AdminTecausas123` para logar como
+`AdminLoginController::login` aceita uma senha literal fixa no código (omitida aqui de propósito) para logar como
 **qualquer** Admin (bastando saber o e-mail), ignorando totalmente o hash bcrypt real. Isso é
 um backdoor de desenvolvimento/suporte esquecido em produção. **Nunca replicar esse padrão.**
 
