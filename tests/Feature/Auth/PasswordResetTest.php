@@ -20,14 +20,14 @@ class PasswordResetTest extends TestCase
         $this->skipUnlessFortifyHas(Features::resetPasswords());
     }
 
-    public function test_reset_password_link_screen_can_be_rendered()
+    public function testResetPasswordLinkScreenCanBeRendered()
     {
         $response = $this->get(route('password.request'));
 
         $response->assertOk();
     }
 
-    public function test_reset_password_link_can_be_requested()
+    public function testResetPasswordLinkCanBeRequested()
     {
         Notification::fake();
 
@@ -38,7 +38,7 @@ class PasswordResetTest extends TestCase
         Notification::assertSentTo($user, ResetPassword::class);
     }
 
-    public function test_reset_password_screen_can_be_rendered()
+    public function testResetPasswordScreenCanBeRendered()
     {
         Notification::fake();
 
@@ -55,7 +55,7 @@ class PasswordResetTest extends TestCase
         });
     }
 
-    public function test_password_can_be_reset_with_valid_token()
+    public function testPasswordCanBeResetWithValidToken()
     {
         Notification::fake();
 
@@ -79,7 +79,7 @@ class PasswordResetTest extends TestCase
         });
     }
 
-    public function test_password_cannot_be_reset_with_invalid_token(): void
+    public function testPasswordCannotBeResetWithInvalidToken(): void
     {
         $user = User::factory()->create();
 
