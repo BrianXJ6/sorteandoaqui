@@ -1,0 +1,10 @@
+# Exported image archives from previous builds — large, and Docker would
+# otherwise hash/upload them as part of the build context on every build.
+images/*.tar
+
+# Safety net: the `build` script's rsync already excludes these from
+# ./app, but if a previous run was interrupted mid-way, stale copies
+# shouldn't leak into a fresh build context.
+app/node_modules/
+app/vendor/
+app/public/build/

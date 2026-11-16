@@ -1,0 +1,138 @@
+services:
+    sorteandoaqui:
+        build:
+            context: ./docker/develop
+            dockerfile: Dockerfile
+        image: sorteandoaqui-app
+        extra_hosts:
+            - host.docker.internal:host-gateway
+        ports:
+            - ${APP_PORT:-80}:80
+            - ${VITE_PORT:-5173}:${VITE_PORT:-5173}
+            - ${XDEBUG_PORT:-9003}:${XDEBUG_PORT:-9003}
+        environment:
+            WWWUSER: 1000
+            WWWGROUP: 1000
+            TZ: ${APP_TZ:-America/Recife}
+            DB_HOST: ${DB_HOST:-mysql}
+            DB_USER: ${DB_USERNAME:-sorteandoaqui}
+            DB_PASSWORD: ${DB_PASSWORD:-root}
+            XDEBUG_MODE: ${SAIL_XDEBUG_MODE:-develop,debug,coverage}
+            XDEBUG_CONFIG: ${SAIL_XDEBUG_CONFIG:-client_host=host.docker.internal}
+            IGNITION_LOCAL_SITES_PATH: ${PWD}
+        volumes:
+            - .:/var/www
+            # node_modules isolado por volume: o container é Alpine (musl) e o
+            # host WSL2 é glibc — compartilhar o node_modules corrompe os
+            # bindings nativos (rolldown/vite) dos dois lados. Mesmo problema
+            # documentado no xpandeai (CLAUDE.md, "Node dentro do Docker").
+            - sorteandoaqui-node-modules-vol:/var/www/node_modules
+        networks:
+            - sorteandoaqui-network
+        depends_on:
+            - mysql
+            - redis
+            - minio
+            - mailpit
+
+    mysql:
+        image: "mysql:8.4"
+        ports:
+            - ${DB_PORT:-3306}:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_ROOT_HOST: "%"
+            MYSQL_DATABASE: ${DB_DATABASE:-sorteandoaqui_db}
+            MYSQL_USER: ${DB_USERNAME:-sorteandoaqui}
+            MYSQL_PASSWORD: ${DB_PASSWORD:-root}
+        command: >
+            --character-set-server=utf8mb4
+            --collation-server=utf8mb4_unicode_ci
+        volumes:
+            - sorteandoaqui-mysql-vol:/var/lib/mysql
+            - ./docker/develop/mysql:/docker-entrypoint-initdb.d
+        networks:
+            - sorteandoaqui-network
+        healthcheck:
+            test: ["CMD", "mysqladmin", "ping", "-p${DB_PASSWORD:-root}"]
+            retries: 3
+            timeout: 5s
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        ports:
+            - ${PHPMYADMIN_PORT:-8888}:80
+        environment:
+            - PMA_HOST=mysql
+            - PMA_PORT=${DB_PORT:-3306}
+            - PMA_USER=${DB_USERNAME:-sorteandoaqui}
+            - PMA_PASSWORD=${DB_PASSWORD:-root}
+        networks:
+            - sorteandoaqui-network
+        depends_on:
+            - mysql
+
+    redis:
+        image: redis:alpine
+        ports:
+            - ${REDIS_PORT:-6379}:6379
+        volumes:
+            - sorteandoaqui-redis-vol:/data
+        networks:
+            - sorteandoaqui-network
+        healthcheck:
+            test: ["CMD", "redis-cli", "ping"]
+            retries: 3
+            timeout: 5s
+
+    redis-commander:
+        image: rediscommander/redis-commander:latest
+        ports:
+            - ${REDIS_COMMANDER_PORT:-8081}:8081
+        environment:
+            - REDIS_HOST=redis
+            - REDIS_PORT=${REDIS_PORT:-6379}
+        networks:
+            - sorteandoaqui-network
+        depends_on:
+            - redis
+
+    minio:
+        image: minio/minio:latest
+        ports:
+            - ${FORWARD_MINIO_PORT:-9000}:9000
+            - ${FORWARD_MINIO_CONSOLE_PORT:-8900}:8900
+        environment:
+            MINIO_ROOT_USER: ${AWS_ACCESS_KEY_ID:-sorteandoaqui}
+            MINIO_ROOT_PASSWORD: ${AWS_SECRET_ACCESS_KEY:-sorteandoaqui}
+        command: 'minio server /data --console-address ":8900"'
+        volumes:
+            - sorteandoaqui-minio-vol:/data
+        networks:
+            - sorteandoaqui-network
+        healthcheck:
+            test: ["CMD", "mc", "ready", "local"]
+            retries: 3
+            timeout: 5s
+
+    mailpit:
+        image: axllent/mailpit:latest
+        ports:
+            - ${FORWARD_MAILPIT_PORT:-1025}:1025
+            - ${FORWARD_MAILPIT_DASHBOARD_PORT:-8025}:8025
+        networks:
+            - sorteandoaqui-network
+
+networks:
+    sorteandoaqui-network:
+        driver: bridge
+
+volumes:
+    sorteandoaqui-mysql-vol:
+        driver: local
+    sorteandoaqui-redis-vol:
+        driver: local
+    sorteandoaqui-minio-vol:
+        driver: local
+    sorteandoaqui-node-modules-vol:
+        driver: local
