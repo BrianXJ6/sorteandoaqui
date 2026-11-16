@@ -208,11 +208,11 @@ e `phpdoc_separation`. O `pint.json` do XpandeAI (preset `psr12`, com
    linhas: o critério é "faz uma coisa só".
 
    ```php
-   if (! $raffle->isActive()) {
+   if (!$raffle->isActive()) {
        return;
    }
 
-   if (! $raffle->hasPaidTickets()) {
+   if (!$raffle->hasPaidTickets()) {
        return;
    }
 
@@ -325,9 +325,12 @@ as páginas públicas.
 e sua comunidade**. Consequências:
 
 - O Pint parte do `pint.json` do XpandeAI (preset `psr12` com regras
-  explícitas), ajustado para manter e formatar os docblocks (seção 4). A
-  validar ao configurar: espaço depois do `!` (os exemplos deste documento
-  usam `! $x`).
+  explícitas), ajustado com `phpdoc_align` (`left`) e `phpdoc_separation` para
+  manter e formatar os docblocks (seção 4). Validado numa amostra: tags
+  redundantes e FQCN são mantidos, e tags de tipos diferentes (`@param`,
+  `@return`, `@throws`) ficam separadas por uma linha em branco.
+- Negação sem espaço: `!$x`. A PSR-12 não define esse espaço, então vale o
+  estilo do XpandeAI.
 - Métodos de teste em camelCase (`testCreatesRaffle`), como pede a PSR-1.
 
 **Git e commits:**
