@@ -350,10 +350,15 @@ métodos privados; dividir em providers só quando crescer):
 - Já vêm no starter kit: `DB::prohibitDestructiveCommands` em produção,
   `Date::use(CarbonImmutable)` e senha forte em produção (mínimo 12 e
   `uncompromised()`).
-- A trazer: `Model::shouldBeStrict()` fora de produção, `URL::forceHttps()` em
-  produção e rate limiters (limiter web padrão, mais um mais estrito nos
-  endpoints de reserva e compra sem login; throttle via Redis, exceto em
-  testes).
+- Aplicados: `Model::shouldBeStrict()` fora de produção (lazy loading,
+  atributo descartado ou inexistente viram exceção em dev e teste) e
+  `URL::forceHttps()` em produção.
+- Rate limiter: **sem limiter global por IP**. Seguidores que entram numa live
+  pela mesma operadora de celular compartilham poucos IPs e seriam bloqueados
+  juntos na hora da venda. O login já é protegido pelo Fortify. Os limiters
+  entram junto com as fatias de reserva, compra e reenvio de bilhetes, mais
+  estritos e só onde há risco de abuso. O `throttleWithRedis()` do XpandeAI
+  também não é necessário: o cache já é Redis, e nos testes é `array`.
 - Depois, no deploy: `trustProxies`.
 - Do XpandeAI, ignorados: `JsonResource::withoutWrapping()` (sem Resources),
   `Schema::defaultStringLength(191)` (MySQL antigo),
