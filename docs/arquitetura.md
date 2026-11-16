@@ -344,6 +344,11 @@ e sua comunidade**. Consequências:
 
 - Repositório criado na branch `main`. O `CLAUDE.md` é versionado; o
   `AGENTS.md` continua ignorado, porque é gerado.
+- O Boost escreve suas diretrizes **só no `AGENTS.md`**: o `config/boost.php`
+  fixa o `guidelines_path`, e o `CLAUDE.md` importa o arquivo com `@AGENTS.md`.
+  Sem isso, o Boost injeta o bloco em inglês no `CLAUDE.md` a cada
+  `composer require`, porque ele escolhe o `CLAUDE.md` sempre que o arquivo
+  existe. O `CLAUDE.md` fica exclusivamente para o nosso fluxo, em pt_BR.
 - Mensagens em inglês, no padrão Conventional Commits (`feat:`, `chore:`,
   `docs:`).
 - **Um commit por pacote instalado** e **um commit por fatia pequena de

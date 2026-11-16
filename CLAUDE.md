@@ -153,8 +153,10 @@ sendo escrito.
 ## Convenções
 
 As diretrizes do Laravel Boost (formatação via Pint, workflow Artisan-first, comandos de
-teste, convenções de Inertia/React etc.) já ficam mantidas no `AGENTS.md` — leia esse arquivo
-pras convenções do dia a dia em vez de duplicá-las aqui.
+teste, convenções de Inertia/React etc.) ficam no `AGENTS.md`, que é gerado, está em inglês e
+não é versionado. Este `CLAUDE.md` importa esse arquivo em vez de duplicá-lo:
+
+@AGENTS.md
 
 As escolhas de arquitetura próprias do projeto (camadas, Actions, DTO etc.) ficam em
 `docs/arquitetura.md`.
