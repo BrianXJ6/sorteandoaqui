@@ -87,10 +87,15 @@ como possível melhoria futura, não MVP.
 **Expiração de reserva (resolve o bug do BRRIFAS de número preso pra
 sempre):** configurável por rifa pelo próprio dono (ele decide quanto tempo
 um número reservado fica garantido pro comprador antes de voltar a ficar
-disponível), com validação de **mínimo 10 minutos e máximo 48 horas** — o
-teto de 48h funciona como válvula de escape automática, nunca dependendo do
-dono configurar certo. Um job agendado roda periodicamente e libera reservas
-vencidas com base nesse valor (que nunca passa de 48h).
+disponível). O valor é informado **em horas, uma unidade só** (o organizador
+não precisa converter, por exemplo, 2 dias em minutos): **padrão de 1 hora,
+mínimo de 1 hora e máximo de 48 horas** (decidido em 2026-11-17, trocando o
+piso de 10 minutos por 1 hora). O teto de 48h funciona como válvula de escape
+automática, nunca dependendo do dono configurar certo, e a validação é só
+"inteiro de 1 a 48". Um job agendado roda periodicamente e libera reservas
+vencidas com base nesse valor (que nunca passa de 48h). O limite de reservas
+simultâneas por comprador e a liberação manual (seção 4) cobrem o caso de um
+número ficar preso por quem não paga.
 
 **As 3 modalidades de criação/ativação de rifa:**
 
