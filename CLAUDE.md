@@ -81,7 +81,7 @@ As fases de **regras de negócio** e de **arquitetura e convenções** estão co
 ## Documentação do projeto (ler antes de codar)
 
 - `docs/regras-de-negocio.md` — decisões de produto, uma por tópico, com o porquê de cada
-  uma e a lista consolidada de pendências jurídicas.
+  uma, incluindo o risco jurídico aceito e monitorado.
 - `docs/arquitetura.md` — camadas, fluxo de requisição, DTO, pastas, padrões, clean code,
   pacotes de terceiros e empresa atual.
 - `docs/brrifas-legado.md` — mapeamento do sistema legado BRRIFAS (regras que valem

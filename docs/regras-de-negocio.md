@@ -301,8 +301,8 @@ financeira/estorno, nós ganhamos comissão) via tutorial guiado de conexão
 da conta MP dentro do próprio app, e oferta de consultoria/suporte
 assistido pra quem travar nesse passo — nunca via obrigação.
 
-**Pendências explícitas de validação jurídica/contábil antes de
-implementar:**
+**Itens jurídicos, contábeis e de gateway conhecidos (sem sessão jurídica
+dedicada; os dois últimos são verificações técnicas da fase de pagamento):**
 - Enquadramento tributário exato da SorteandoAqui (CNAE como
   tecnologia/intermediação de pagamentos).
 - Redação do Termo de Uso/Contrato do Organizador (responsabilidade
@@ -531,28 +531,19 @@ Mesma mecânica de estorno já definida: via API do gateway se for split,
 manual entre organizador e comprador se for PIX manual — não é regra
 nova, só mais um gatilho pra mecânica que já existe.
 
-## Pendências jurídicas e de conformidade consolidadas
+## Itens jurídicos e de conformidade (fora do planejamento atual)
 
-Lista única de tudo que ficou deliberadamente adiado pra uma sessão
-dedicada a questões jurídicas (não bloqueia arquitetura/planejamento,
-mas precisa de validação antes do lançamento):
+**Decisão (2026-11-17): não há sessão jurídica dedicada, e os itens jurídicos
+deixaram de ser pendência de planejamento.** O foco é o fluxo do MVP. O risco
+regulatório das rifas segue como **risco aceito e monitorado**, com gatilhos de
+revisão definidos na seção 6.
 
-- Enquadramento tributário exato da SorteandoAqui (CNAE como
-  tecnologia/intermediação) — seção 5.
-- Redação do Termo de Uso/Contrato do Organizador (responsabilidade
-  fiscal/regulatória, veracidade do prêmio) — seção 5.
-- Prazo legal de emissão de NF-e/NFS-e e enquadramento tributário de
-  "cota de sorteio" — seção 5.
-- Se existe exigência regulatória específica pra rifas/sorteios no Brasil
-  além do fiscal comum, e se há caminho de autorização pra rifa comercial
-  com fins lucrativos (achado da pesquisa: aparentemente não há — só
-  entidades filantrópicas) — seção 6, risco aceito e monitorado com
-  gatilhos de revisão definidos.
-- Valor exato da % retida (se vier a existir algo residual) e tratamento
-  fino de chargebacks/extornos — seção 3/5.
-- Se o gateway escolhido suporta repasse programado/com atraso — seção 5.
-- **LGPD**: conformidade de coleta/retenção/exclusão de dados pessoais
-  (comprador: nome/e-mail/telefone; organizador: dados via gateway),
-  avisos de cookies, política de privacidade e termo de consentimento —
-  novo item desta seção, usuário concorda que é necessário e está
-  ganhando peso jurídico.
+O que fica como contexto, e que só vira trabalho quando o fluxo do MVP chegar
+nele:
+
+- **Aceite de termos no cadastro** (Termo de Uso/Contrato do Organizador, com
+  a posição "não somos responsáveis pela rifa", seção 5).
+- **LGPD** nas telas e fluxos: aviso de cookies, política de privacidade e
+  consentimento na coleta de dados de compradores e organizadores.
+- **Fiscal**: enquadramento (CNAE) e nota de serviço da comissão, conforme
+  seção 5.
