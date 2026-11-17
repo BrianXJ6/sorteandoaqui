@@ -377,6 +377,12 @@ por rifa, não excludentes entre si:
 3. **Ranking de compradores** — prêmio pra quem mais comprou cotas (1º,
    2º lugar em volume).
 
+**Quem pode usar os prêmios extras (decidido, 2026-11-17):** a cota premiada e o
+ranking de compradores existem nos sorteios **Básica e Avançada**. O **Grátis**, com no
+máximo 10 números fixos, só tem o sorteio principal, e o bloco de prêmios extras não
+aparece na criação. Não há trava só para a Avançada, porque o tier é classificado
+automaticamente pelo faturamento e não é um plano que se compra.
+
 **Revelação da cota premiada é configurável pelo organizador** — ele
 escolhe entre revelar **imediatamente** (assim que o número é vendido) ou
 só **no encerramento**, junto do resultado principal. Padrão (decidido em

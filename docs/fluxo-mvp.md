@@ -110,7 +110,8 @@ Passos já decididos, na ordem em que acontecem:
    2. **Números e valor:** quantidade de números e valor por número, com o tier e a taxa de
       ativação calculados ao vivo. A modalidade segue as regras (o Grátis só tem números
       fixos, e acima de 100 números vira cotas). Logo abaixo fica um bloco opcional e
-      recolhido de **prêmios extras** (cota premiada e ranking de compradores), porque a
+      recolhido de **prêmios extras** (cota premiada e ranking de compradores, só na Básica e na
+      Avançada; no Grátis o bloco não aparece), porque a
       cota premiada depende do total de números. Quem só quer testar não precisa abri-lo.
    3. **Regras:** expiração da reserva (padrão de 1 hora), limite de reservas (padrão de 10) e
       data prevista (opcional).
