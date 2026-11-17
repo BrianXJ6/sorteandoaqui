@@ -148,7 +148,15 @@ Passos já decididos, na ordem em que acontecem:
      padrão já vem escolhida, e a tela de revisão mostra "Recebendo em: conta X, trocar". O
      nome evita "Faturamento", que já é usado em "faturamento potencial" do tier.
 
-Ponto ainda em aberto nesta jornada: o cadastro mínimo da empresa (onboarding).
+7. **Cadastro mínimo, sem onboarding obrigatório.** O painel continua sendo a porta de entrada,
+   sem wizard antes dele, para não afastar quem só quer testar. O mínimo é pedido na hora de
+   publicar: o **nome de exibição** da empresa (já vem preenchido com o nome da pessoa) e a
+   **conta de recebimento** (passo Recebimento). Foto e descrição curta são opcionais e dão
+   confiança à página pública. O painel mostra um cartão discreto "Complete seu perfil" com o
+   que falta, em vez de uma trava. O CPF ou CNPJ, que a nota de serviço da taxa e da comissão
+   provavelmente exige em sorteios pagos, ficou como pesquisa (`pesquisas.md`).
+
+Ponto ainda em aberto nesta jornada: o acompanhamento do sorteio depois de publicado.
 
 Nota para a ordem das etapas (Tópico 3): a pré-visualização reusa a página pública do sorteio,
 então a tela de revisão depende dessa página.

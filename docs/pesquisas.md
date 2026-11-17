@@ -21,7 +21,8 @@ ela importa e em que pé está, para ninguém esquecer de voltar a ela.
 - **Pergunta:** enquadramento tributário da empresa (CNAE como tecnologia), redação do Termo
   de Uso e do contrato do organizador, prazo de emissão da nota de serviço da comissão,
   regulação de rifas e responsabilidade de plataforma, e LGPD (cookies, política de
-  privacidade, consentimento).
+  privacidade, consentimento), além de quando pedir o CPF ou CNPJ do organizador (a nota de
+  serviço da taxa e da comissão provavelmente exige em sorteios pagos).
 - **Por que importa:** reduzir risco antes de o volume crescer.
 - **Estado:** sem prazo e sem sessão dedicada. É o antigo "dia para as dúvidas jurídicas",
   que saiu das pendências do planejamento e fica registrado aqui para não se perder. Os
