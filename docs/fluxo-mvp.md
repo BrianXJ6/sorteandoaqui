@@ -5,8 +5,51 @@ Documento vivo, no mesmo formato de `docs/regras-de-negocio.md` e
 regras de produto estão em `regras-de-negocio.md`; aqui fica o recorte do que
 entra no MVP e em que ordem.
 
-Tópicos planejados: (1) corte de escopo, (2) jornadas ponta a ponta,
-(3) ordem das fatias de implementação.
+## Roteiro e andamento (fonte única)
+
+**Fase 0 — Base e planejamento (concluída)**
+
+- [x] Ambiente: Laravel 13, React/Inertia, Docker (MySQL, Redis, MinIO, Mailpit, Horizon)
+- [x] Pesquisa do sistema legado (`brrifas-legado.md`)
+- [x] Regras de negócio, 8 tópicos (`regras-de-negocio.md`)
+- [x] Arquitetura, 7 seções (`arquitetura.md`)
+- [x] Base técnica: Pint, defaults do provider, docblocks, Permission, Auditing, Data, testes em MySQL
+- [x] GitHub: repositório, README, commits só com a identidade do autor e regra para qualquer IA
+- [x] Corte de escopo do MVP (tópico 1 abaixo)
+
+**Fase 1 — Planejamento do MVP (em andamento)**
+
+- [x] Tópico 1: corte de escopo
+- [ ] Decisões que travam fatias:
+  - [ ] Campos do sorteio travados após publicar ou primeira venda
+  - [ ] Percentual da comissão do split (`marketplace_fee`)
+  - [ ] Valores padrão: expiração da reserva (sugestão 30 min), limite de reservas por
+        comprador, contador do Grátis por mês-calendário, revelação imediata da cota premiada
+  - [ ] Como a plataforma cobra a taxa de ativação (meio de pagamento próprio, antes do split)
+- [ ] Tópico 2: jornadas ponta a ponta (organizador e comprador)
+- [ ] Tópico 3: ordem das fatias de implementação
+- [ ] Pesquisa técnica do Mercado Pago (split, PIX, repasse programado, estorno), antes da última fatia
+
+**Fase 2 — Implementação por fatias (não começou)**
+
+Ordem provisória, a fechar no tópico 3. Cada fatia vira commits pequenos, com testes e Pint verdes:
+
+- [ ] Empresas e membros (pessoa física como própria empresa)
+- [ ] Sorteio: criação, tiers, modalidades, regras do Grátis, edição
+- [ ] Números e reservas: fixo e cotas, expiração, limite de reservas
+- [ ] Compra sem login e link de acesso por e-mail
+- [ ] PIX manual: baixa de pagamento pelo organizador
+- [ ] Taxa de ativação
+- [ ] Página pública do sorteio e vitrine
+- [ ] Resultado declarado e prêmio principal
+- [ ] Admin mínimo (suspender conta) e e-mails em fila
+- [ ] Cota premiada e ranking de compradores
+- [ ] Cancelamento com estorno e reembolso individual
+- [ ] Painel interno do Suporte, auditoria e seletor de várias empresas
+- [ ] Split no Mercado Pago (última fatia)
+
+**Pós-MVP:** colaboradores, assinatura e créditos, domínio próprio, segundo gateway, Vendedor e
+leads, denúncia de sorteio.
 
 ## 1. Corte de escopo (fechado)
 
