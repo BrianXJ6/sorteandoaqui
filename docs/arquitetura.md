@@ -339,6 +339,13 @@ e sua comunidade**. Consequências:
 - Negação sem espaço: `!$x`. A PSR-12 não define esse espaço, então vale o
   estilo do XpandeAI.
 - Métodos de teste em camelCase (`testCreatesRaffle`), como pede a PSR-1.
+- **Os testes rodam em MySQL** (banco `testing`, o mesmo MySQL 8.4 de dev e
+  produção), não no SQLite em memória do starter kit: constraints únicas e
+  locks de reserva se comportam diferente no SQLite. O `phpunit.xml` fixa
+  `DB_CONNECTION` e `DB_DATABASE` com `force="true"`, para os testes nunca
+  encostarem no banco de desenvolvimento. O banco `testing` é criado pelo
+  `docker/develop/mysql/create-testing-db.sh` no primeiro boot do volume do
+  MySQL.
 
 **Git e commits:**
 
