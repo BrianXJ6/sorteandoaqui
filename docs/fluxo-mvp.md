@@ -20,7 +20,7 @@ entra no MVP e em que ordem.
 **Fase 1 — Planejamento do MVP (em andamento)**
 
 - [x] Tópico 1: corte de escopo
-- [ ] Decisões que travam fatias:
+- [x] Decisões que travam fatias:
   - [x] Campos do sorteio travados após publicar (trava na publicação, ver seção 6 de
         `regras-de-negocio.md`)
   - [x] Percentual da comissão do split (`marketplace_fee`): 5%, a reajustar depois
@@ -29,10 +29,10 @@ entra no MVP e em que ordem.
     - [x] Limite de reservas por comprador: padrão 10, de 1 até o total do sorteio
     - [x] Contador do Grátis: mês-calendário, zera no dia 1 de cada mês
     - [x] Revelação da cota premiada: padrão imediato, o organizador pode trocar
-  - [ ] Como a plataforma cobra a taxa de ativação (meio de pagamento próprio, antes do split)
+  - [x] Cobrança da taxa de ativação: PIX gerado pela conta Mercado Pago da plataforma, com
+        ativação automática por webhook (sem conferência manual)
 - [ ] Tópico 2: jornadas ponta a ponta (organizador e comprador)
 - [ ] Tópico 3: ordem das fatias de implementação
-- [ ] Pesquisa técnica do Mercado Pago (split, PIX, repasse programado, estorno), antes da última fatia
 
 **Fase 2 — Implementação por fatias (não começou)**
 
@@ -43,7 +43,9 @@ Ordem provisória, a fechar no tópico 3. Cada fatia vira commits pequenos, com 
 - [ ] Números e reservas: fixo e cotas, expiração, limite de reservas
 - [ ] Compra sem login e link de acesso por e-mail
 - [ ] PIX manual: baixa de pagamento pelo organizador
-- [ ] Taxa de ativação
+- [ ] Pesquisa técnica do Mercado Pago (documentação oficial: cobrança PIX, webhook, split,
+      repasse programado, estorno), antes da cobrança da taxa de ativação
+- [ ] Taxa de ativação (PIX via Mercado Pago, ativação automática por webhook)
 - [ ] Página pública do sorteio e vitrine
 - [ ] Resultado declarado e prêmio principal
 - [ ] Admin mínimo (suspender conta) e e-mails em fila

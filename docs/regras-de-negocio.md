@@ -168,6 +168,17 @@ constante na classe dona da regra (seção 4 de `arquitetura.md`). A ideia antig
 de reter uma % em custódia foi abandonada (seção 5). A comparação com o que os
 concorrentes cobram está registrada em `docs/pesquisas.md`.
 
+**Cobrança da taxa de ativação (decidido, 2026-11-17):** o organizador paga a
+taxa por **PIX gerado pela conta do Mercado Pago da plataforma**, via API (QR
+code e "copia e cola"). O webhook só avisa: o sistema **reconsulta a API** do
+Mercado Pago para confirmar o pagamento e ativa o sorteio automaticamente, de
+forma idempotente (padrão da seção 3 de `arquitetura.md`). No MVP é só PIX;
+cartão fica para depois. Fica descartada a chave PIX fixa com conferência
+manual, o ponto frágil do BRRIFAS. É uma venda direta da plataforma, que não
+passa pelo split, e por isso traz uma integração básica com o Mercado Pago
+(cobrança PIX e webhook) para antes da etapa do split. No tier Grátis não há
+cobrança: a publicação ativa direto.
+
 ## 4. Reserva e compra de números (fechado)
 
 **Compra rápida sem conta, mantida (decidido):** o comprador não precisa se
