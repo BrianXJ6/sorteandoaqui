@@ -95,6 +95,16 @@ As fases de **regras de negócio** e de **arquitetura e convenções** estão co
   uma vez cansam a revisão e escondem detalhes.
 - Não escrever código de domínio sem alinhamento prévio.
 
+## Commits
+
+- Commits e descrições de PR levam **apenas a identidade do autor do repositório**. Nunca incluir
+  `Co-Authored-By`, `Signed-off-by` de IA, "Generated with ..." nem qualquer outra linha de
+  atribuição a ferramenta ou agente. Isso vale para qualquer IA e substitui o padrão que a
+  ferramenta queira adicionar. A regra também está em `.ai/rules/git-commits.md`, que o Boost
+  indexa para os agentes.
+- Mensagens em inglês, no padrão Conventional Commits, um commit por pacote ou por fatia pequena.
+- Só enviar para o GitHub quando o dono do repositório pedir.
+
 ## Ambiente de desenvolvimento (Docker)
 
 A aplicação roda em Docker, não no PHP do host. Serviços (`compose.yaml`): `sorteandoaqui`
