@@ -132,8 +132,23 @@ Passos já decididos, na ordem em que acontecem:
    - Se o PIX vencer, o botão gera um novo. No BRRIFAS a cobrança não podia ser regerada depois de
      expirar, e aqui isso não acontece.
 
-Ponto ainda em aberto nesta jornada: onde o organizador define como quer receber os pagamentos
-(PIX manual ou split).
+6. **Forma de recebimento.** Sem isso o comprador não tem para onde pagar, então é uma peça
+   central da jornada:
+   - A empresa cadastra uma ou mais **contas de recebimento** e marca uma como **padrão**. Cada
+     sorteio usa a conta padrão, a menos que a pessoa escolha outra conta para aquele sorteio.
+     Para a pessoa física, a empresa é ela mesma.
+   - Tipos de conta: **PIX manual** (o organizador informa a chave PIX, o nome e a cidade) e
+     **Mercado Pago** (conexão da conta, para o split, última etapa do MVP).
+   - No PIX manual **não há upload de QR code**: o sistema gera o QR code e o "copia e cola"
+     com o valor exato de cada compra, e o dinheiro vai direto para a conta do organizador. A
+     baixa do pagamento segue manual, pelo organizador. O formato do PIX (BR Code) será
+     confirmado na pesquisa técnica antes de implementar.
+   - Um passo chamado **Recebimento** entra na criação só quando a empresa ainda não tem conta
+     de recebimento, ou seja, no primeiro sorteio (4 passos no total). Nos seguintes a conta
+     padrão já vem escolhida, e a tela de revisão mostra "Recebendo em: conta X, trocar". O
+     nome evita "Faturamento", que já é usado em "faturamento potencial" do tier.
+
+Ponto ainda em aberto nesta jornada: o cadastro mínimo da empresa (onboarding).
 
 Nota para a ordem das etapas (Tópico 3): a pré-visualização reusa a página pública do sorteio,
 então a tela de revisão depende dessa página.

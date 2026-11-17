@@ -261,6 +261,12 @@ organizador perde acesso às ferramentas de gestão financeira/estorno do
 nosso dashboard (só disponíveis a quem usa split) — isso já funciona como
 incentivo natural pra migrar, sem precisarmos forçar nada.
 
+**Como o comprador paga no PIX manual (decidido, 2026-11-17):** o organizador informa só a
+chave PIX, o nome e a cidade. O sistema gera o QR code e o "copia e cola" com o valor exato
+de cada compra, e o dinheiro vai direto para a conta dele. Não há upload de QR code, porque
+um QR estático não carrega o valor e o comprador teria que digitá-lo. A empresa pode ter
+várias contas de recebimento, com uma padrão, e cada sorteio pode usar outra conta.
+
 **2. Split (recomendado, habilitado automaticamente a quem conectar
 gateway)** — **cada organizador precisa de sua própria conta no gateway**
 (Mercado Pago, candidato principal — confiança do público BR, já é
