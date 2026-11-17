@@ -155,9 +155,10 @@ R$ 10.000 cada, consumindo a mesma lógica da tabela de faixas). Créditos
 nunca seriam sacáveis como dinheiro, só uso interno na plataforma. Detalhar
 quando entrarmos no tópico de planos de assinatura.
 
-**Adiado (decisão explícita de deixar pro detalhamento de Pagamentos):**
-valor exato da % retida nas rifas Grátis/Básica, percentual do split nas
-Avançadas, e tratamento de extornos/chargebacks.
+**Em aberto (número de negócio):** o percentual da comissão da plataforma nas
+vendas feitas por split (o `marketplace_fee`). A ideia antiga de reter uma % em
+custódia foi abandonada (seção 5), então esse é o único percentual que falta
+definir.
 
 ## 4. Reserva e compra de números (fechado)
 
@@ -210,7 +211,7 @@ ativas de uma rifa e liberar manualmente uma reserva antes do job
 automático de 48h agir — cobre casos que o job periódico não resolve a
 tempo (cancelamento a pedido do comprador, suspeita de fraude, etc.).
 
-## 5. Pagamento (fechado, com pendências de validação jurídica explícitas)
+## 5. Pagamento (fechado)
 
 **Mudança de rumo importante:** o desenho original (custódia nossa pra
 Grátis/Básica, retendo % e repassando líquido pro organizador) foi
@@ -323,7 +324,7 @@ depende de cada organizador ter uma conta conectada via OAuth *naquele*
 gateway, então um failover de split exige que o organizador também conecte
 uma conta no segundo gateway. O PIX manual não é afetado.
 
-## 6. Sorteio e resultado (fechado, com alerta jurídico de alta prioridade)
+## 6. Sorteio e resultado (fechado, com risco jurídico aceito)
 
 **Mecanismo do sorteio:** sempre **externo e declarado pelo organizador**
 (Loteria Federal, live, qualquer método por fora) — **não** construir um

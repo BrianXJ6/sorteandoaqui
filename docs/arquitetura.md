@@ -156,9 +156,8 @@ subpastas por domínio (`pages/raffles/`, `components/raffles/`).
    XpandeAI usa um `BaseDTO` para "isolar o pacote", mas trocar o pacote
    mexeria em todos os DTOs de qualquer forma.
 
-**Ponto em aberto que merece tópico próprio:** como o sistema sabe qual é a
-**empresa atual** quando um usuário pertence a mais de uma. Sem `TenantScope`
-global, isso decide como toda consulta é escopada.
+Como o sistema sabe qual é a **empresa atual** quando um usuário pertence a mais
+de uma foi decidido na seção 6.
 
 ## 4. Clean Code e SOLID (fechado)
 
