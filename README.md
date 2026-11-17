@@ -49,6 +49,7 @@ Cada decisão do projeto é registrada antes de virar código, um tópico por ve
 | [`docs/regras-de-negocio.md`](docs/regras-de-negocio.md) | Decisões de produto: multi-tenancy leve, tipos de sorteio, monetização, compra sem login, pagamento (PIX manual e split) e papéis internos |
 | [`docs/arquitetura.md`](docs/arquitetura.md) | Camadas, Actions e DTOs, organização de pastas, padrões, regras de código, pacotes e fluxo de trabalho |
 | [`docs/fluxo-mvp.md`](docs/fluxo-mvp.md) | O que entra no MVP e em que ordem |
+| [`docs/pesquisas.md`](docs/pesquisas.md) | Pesquisas e estudos de caso em aberto, como concorrentes e questões jurídicas |
 | [`docs/brrifas-legado.md`](docs/brrifas-legado.md) | Mapeamento de um sistema legado de rifas, usado como fonte de regras reaproveitáveis e de erros a não repetir |
 
 ## Como o projeto é conduzido

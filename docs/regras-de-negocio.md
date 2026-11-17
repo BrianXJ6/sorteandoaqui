@@ -155,10 +155,13 @@ R$ 10.000 cada, consumindo a mesma lógica da tabela de faixas). Créditos
 nunca seriam sacáveis como dinheiro, só uso interno na plataforma. Detalhar
 quando entrarmos no tópico de planos de assinatura.
 
-**Em aberto (número de negócio):** o percentual da comissão da plataforma nas
-vendas feitas por split (o `marketplace_fee`). A ideia antiga de reter uma % em
-custódia foi abandonada (seção 5), então esse é o único percentual que falta
-definir.
+**Comissão do split (decidido, 2026-11-17): 5%** sobre as vendas feitas por split
+(o `marketplace_fee`), no mesmo valor para todos os tiers. É um valor baixo de
+propósito, para captar os primeiros usuários; quando o uso e a facilidade da
+plataforma forem o motivo de eles ficarem, a comissão é reajustada. Fica como
+constante na classe dona da regra (seção 4 de `arquitetura.md`). A ideia antiga
+de reter uma % em custódia foi abandonada (seção 5). A comparação com o que os
+concorrentes cobram está registrada em `docs/pesquisas.md`.
 
 ## 4. Reserva e compra de números (fechado)
 
