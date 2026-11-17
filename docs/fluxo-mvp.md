@@ -109,7 +109,9 @@ Passos já decididos, na ordem em que acontecem:
    1. **O sorteio:** nome do prêmio, descrição e fotos.
    2. **Números e valor:** quantidade de números e valor por número, com o tier e a taxa de
       ativação calculados ao vivo. A modalidade segue as regras (o Grátis só tem números
-      fixos, e acima de 100 números vira cotas).
+      fixos, e acima de 100 números vira cotas). Logo abaixo fica um bloco opcional e
+      recolhido de **prêmios extras** (cota premiada e ranking de compradores), porque a
+      cota premiada depende do total de números. Quem só quer testar não precisa abri-lo.
    3. **Regras:** expiração da reserva (padrão de 1 hora), limite de reservas (padrão de 10) e
       data prevista (opcional).
 4. **Tela de revisão com pré-visualização.** A revisão não é um passo, é uma tela: mostra o
@@ -118,8 +120,7 @@ Passos já decididos, na ordem em que acontecem:
    prêmios travam. A pessoa volta para editar qualquer passo ou confirma clicando em criar. Essa
    pré-visualização era uma feature que o time de UX do BRRIFAS queria e nunca entrou.
 
-Pontos ainda em aberto nesta jornada: em qual passo ficam os prêmios extras (cota premiada e
-ranking) e o que acontece depois do "criar" nos sorteios pagos.
+Ponto ainda em aberto nesta jornada: o que acontece depois do "criar" nos sorteios pagos.
 
 Nota para a ordem das etapas (Tópico 3): a pré-visualização reusa a página pública do sorteio,
 então a tela de revisão depende dessa página.
