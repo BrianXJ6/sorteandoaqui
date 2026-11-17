@@ -24,11 +24,11 @@ entra no MVP e em que ordem.
   - [x] Campos do sorteio travados após publicar (trava na publicação, ver seção 6 de
         `regras-de-negocio.md`)
   - [x] Percentual da comissão do split (`marketplace_fee`): 5%, a reajustar depois
-  - [ ] Valores padrão:
+  - [x] Valores padrão:
     - [x] Expiração da reserva: input em horas, padrão de 1 hora, de 1 a 48
     - [x] Limite de reservas por comprador: padrão 10, de 1 até o total do sorteio
     - [x] Contador do Grátis: mês-calendário, zera no dia 1 de cada mês
-    - [ ] Revelação imediata da cota premiada
+    - [x] Revelação da cota premiada: padrão imediato, o organizador pode trocar
   - [ ] Como a plataforma cobra a taxa de ativação (meio de pagamento próprio, antes do split)
 - [ ] Tópico 2: jornadas ponta a ponta (organizador e comprador)
 - [ ] Tópico 3: ordem das fatias de implementação

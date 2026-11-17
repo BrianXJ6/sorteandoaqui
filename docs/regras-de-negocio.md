@@ -368,8 +368,8 @@ por rifa, não excludentes entre si:
 
 **Revelação da cota premiada é configurável pelo organizador** — ele
 escolhe entre revelar **imediatamente** (assim que o número é vendido) ou
-só **no encerramento**, junto do resultado principal. Padrão sugerido:
-imediato (é o que o mercado já faz — funciona como gatilho de continuidade
+só **no encerramento**, junto do resultado principal. Padrão (decidido em
+2026-11-17): imediato (é o que o mercado já faz — funciona como gatilho de continuidade
 de compra), mas a escolha é sempre do organizador.
 
 **Data prevista de sorteio é opcional.** Se vazia, mostrar aviso
