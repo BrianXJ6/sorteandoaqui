@@ -82,7 +82,7 @@ As fases de **regras de negócio** e de **arquitetura e convenções** estão co
 
 - `docs/regras-de-negocio.md` — decisões de produto, uma por tópico, com o porquê de cada
   uma, incluindo o risco jurídico aceito e monitorado.
-- `docs/fluxo-mvp.md` — o passo a passo linear até o MVP, em etapas numeradas (é a fonte única de andamento).
+- `docs/fluxo-mvp.md` — o que entra no MVP e em que ordem (em construção, tópico a tópico).
 - `docs/arquitetura.md` — camadas, fluxo de requisição, DTO, pastas, padrões, clean code,
   pacotes de terceiros e empresa atual.
 - `docs/brrifas-legado.md` — mapeamento do sistema legado BRRIFAS (regras que valem

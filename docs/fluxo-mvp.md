@@ -1,57 +1,62 @@
 # Fluxo e escopo do MVP do SorteandoAqui
 
 Documento vivo, no mesmo formato de `docs/regras-de-negocio.md` e
-`docs/arquitetura.md`. As regras de produto estão em `regras-de-negocio.md`; aqui
-ficam o recorte do que entra no MVP e o passo a passo até entregá-lo.
+`docs/arquitetura.md`: um tópico por vez, fechado com decisão explícita. As
+regras de produto estão em `regras-de-negocio.md`; aqui fica o recorte do que
+entra no MVP e em que ordem.
 
-## Passo a passo (fonte única de andamento)
+## Roteiro e andamento (fonte única)
 
-Uma lista só, em ordem. Cada etapa só começa quando a anterior termina, e cada etapa
-fechada ganha sua seção neste documento. Não se pula de etapa.
+**Fase 0 — Base e planejamento (concluída)**
 
-**Concluído até aqui:** ambiente, pesquisa do legado, regras de negócio, arquitetura,
-base técnica (Pint, defaults, docblocks, pacotes, testes em MySQL), GitHub e o corte de
-escopo (seção abaixo).
+- [x] Ambiente: Laravel 13, React/Inertia, Docker (MySQL, Redis, MinIO, Mailpit, Horizon)
+- [x] Pesquisa do sistema legado (`brrifas-legado.md`)
+- [x] Regras de negócio, 8 tópicos (`regras-de-negocio.md`)
+- [x] Arquitetura, 7 seções (`arquitetura.md`)
+- [x] Base técnica: Pint, defaults do provider, docblocks, Permission, Auditing, Data, testes em MySQL
+- [x] GitHub: repositório, README, commits só com a identidade do autor e regra para qualquer IA
+- [x] Corte de escopo do MVP (tópico 1 abaixo)
 
-**Planejamento do MVP**
+**Fase 1 — Planejamento do MVP (em andamento)**
 
-- [ ] **Etapa 1** — Decisão: quais campos do sorteio ficam travados depois de publicar
-- [ ] **Etapa 2** — Decisão: percentual da comissão do split (`marketplace_fee`)
-- [ ] **Etapa 3** — Decisão: valores padrão (expiração da reserva, limite de reservas,
-      contador do Grátis, revelação da cota premiada)
-- [ ] **Etapa 4** — Decisão: como a plataforma cobra a taxa de ativação
-- [ ] **Etapa 5** — Jornada do organizador, do cadastro até receber
-- [ ] **Etapa 6** — Jornada do comprador, do link ao bilhete
-- [ ] **Etapa 7** — Revisão final da ordem das etapas de implementação (8 a 21)
+- [x] Tópico 1: corte de escopo
+- [ ] Decisões que travam fatias:
+  - [ ] Campos do sorteio travados após publicar ou primeira venda
+  - [ ] Percentual da comissão do split (`marketplace_fee`)
+  - [ ] Valores padrão: expiração da reserva (sugestão 30 min), limite de reservas por
+        comprador, contador do Grátis por mês-calendário, revelação imediata da cota premiada
+  - [ ] Como a plataforma cobra a taxa de ativação (meio de pagamento próprio, antes do split)
+- [ ] Tópico 2: jornadas ponta a ponta (organizador e comprador)
+- [ ] Tópico 3: ordem das fatias de implementação
+- [ ] Pesquisa técnica do Mercado Pago (split, PIX, repasse programado, estorno), antes da última fatia
 
-**Implementação** (ordem provisória, revista na etapa 7; cada etapa vira commits pequenos,
-com testes e Pint verdes)
+**Fase 2 — Implementação por fatias (não começou)**
 
-- [ ] **Etapa 8** — Empresas e membros (pessoa física como própria empresa)
-- [ ] **Etapa 9** — Sorteio: criação, tiers, modalidades, regras do Grátis e edição
-- [ ] **Etapa 10** — Números e reservas: fixo e cotas, expiração, limite de reservas
-- [ ] **Etapa 11** — Compra sem login e link de acesso por e-mail
-- [ ] **Etapa 12** — PIX manual: baixa de pagamento pelo organizador
-- [ ] **Etapa 13** — Taxa de ativação
-- [ ] **Etapa 14** — Página pública do sorteio e vitrine
-- [ ] **Etapa 15** — Resultado declarado e prêmio principal
-- [ ] **Etapa 16** — Admin mínimo (suspender conta) e e-mails em fila
-- [ ] **Etapa 17** — Cota premiada e ranking de compradores
-- [ ] **Etapa 18** — Cancelamento com estorno e reembolso individual
-- [ ] **Etapa 19** — Painel interno do Suporte, auditoria e seletor de várias empresas
-- [ ] **Etapa 20** — Pesquisa técnica do Mercado Pago (documentação oficial: split, PIX,
-      repasse programado, estorno)
-- [ ] **Etapa 21** — Split no Mercado Pago (última etapa do MVP)
+Ordem provisória, a fechar no tópico 3. Cada fatia vira commits pequenos, com testes e Pint verdes:
 
-**Fora do MVP:** colaboradores, assinatura e créditos, domínio próprio, segundo gateway,
-Vendedor e leads, denúncia de sorteio.
+- [ ] Empresas e membros (pessoa física como própria empresa)
+- [ ] Sorteio: criação, tiers, modalidades, regras do Grátis, edição
+- [ ] Números e reservas: fixo e cotas, expiração, limite de reservas
+- [ ] Compra sem login e link de acesso por e-mail
+- [ ] PIX manual: baixa de pagamento pelo organizador
+- [ ] Taxa de ativação
+- [ ] Página pública do sorteio e vitrine
+- [ ] Resultado declarado e prêmio principal
+- [ ] Admin mínimo (suspender conta) e e-mails em fila
+- [ ] Cota premiada e ranking de compradores
+- [ ] Cancelamento com estorno e reembolso individual
+- [ ] Painel interno do Suporte, auditoria e seletor de várias empresas
+- [ ] Split no Mercado Pago (última fatia)
 
-## Corte de escopo (concluído)
+**Pós-MVP:** colaboradores, assinatura e créditos, domínio próprio, segundo gateway, Vendedor e
+leads, denúncia de sorteio.
+
+## 1. Corte de escopo (fechado)
 
 **Decisões do corte:**
 
 - **PIX manual primeiro, split do Mercado Pago por último.** O split entra na
-  primeira entrega do MVP, mas é a última etapa, para concentrar toda a
+  primeira entrega do MVP, mas é a última fatia, para concentrar toda a
   energia nele.
 - **A vitrine pública entra no MVP**, simples, mas visível, para os usuários
   perceberem a movimentação da plataforma.
@@ -70,7 +75,7 @@ Vendedor e leads, denúncia de sorteio.
 | Página pública do sorteio com link direto | Painel interno: Suporte e auditoria | Papel de Vendedor e leads |
 | Compra sem login: reserva atômica, limite de reservas, link por e-mail | Seletor de várias empresas por usuário | Denúncia de sorteio |
 | Pagamento por **PIX manual** | **Vitrine pública**, simples e visível | |
-| Resultado declarado e prêmio principal | Pagamento por **split no Mercado Pago**, com webhook (última etapa) | |
+| Resultado declarado e prêmio principal | Pagamento por **split no Mercado Pago**, com webhook (última fatia) | |
 | Suspender conta (Admin mínimo) e e-mails em fila | | |
 
 **Conformidade:** aceite de termos no cadastro e os avisos de LGPD entram
