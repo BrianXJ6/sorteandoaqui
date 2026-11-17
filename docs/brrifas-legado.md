@@ -1,7 +1,7 @@
 # BRRIFAS — referência de migração para o SorteandoAqui
 
 > Documento de pesquisa, não de arquitetura. Consolida o que foi encontrado no código do
-> **BRRIFAS** (`/home/brian/pessoal/brrifas`), um sistema de rifas online descontinuado
+> **BRRIFAS** (repositório local `brrifas`), um sistema de rifas online descontinuado
 > (nome interno "tecausas", último commit: "Ultimo lançamento - projeto descontinuado"),
 > estudado para extrair regras de negócio e fluxos reaproveitáveis para o **SorteandoAqui**.
 > Pesquisa feita por 5 sub-agentes em paralelo (2026-11-12), cada um cobrindo uma fatia do
@@ -403,5 +403,5 @@ negócio real (nem entrega de prêmio, nem nota fiscal).
 Relatórios de 5 sub-agentes (2026-11-12), cada um cobrindo: banco de dados/Models, núcleo do
 domínio de rifas, pagamentos, usuários/carteira/vendedores/admin, e frontend/rotas. Arquivos
 exatos lidos estão listados ao final de cada relatório original (não reproduzidos aqui por
-brevidade) — qualquer dúvida de detalhe, os caminhos absolutos dentro de
-`/home/brian/pessoal/brrifas` estão nos relatórios desta rodada de pesquisa.
+brevidade) — qualquer dúvida de detalhe, os caminhos dentro do repositório
+`brrifas` estão nos relatórios desta rodada de pesquisa.

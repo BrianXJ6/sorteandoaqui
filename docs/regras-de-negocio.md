@@ -394,8 +394,8 @@ base legal de rifas no Brasil (Lei 5.768/1971, hoje sob a Secretaria de
 Prêmios e Apostas/Ministério da Fazenda) **só autoriza rifas de entidades
 filantrópicas/sem fins lucrativos** — não haveria caminho legal de
 autorização pra rifa comercial de pessoa física/empresa com fins de
-lucro, independente de quem realiza o sorteio. Caso real: o influenciador
-"Nego Di" foi condenado em 2026 por promover rifa comercial sem
+lucro, independente de quem realiza o sorteio. Caso real: um influenciador
+foi condenado em 2026 por promover rifa comercial sem
 autorização (escalou a estelionato/lavagem por fraude comprovada, mas a
 raiz foi "loteria não autorizada").
 
@@ -430,7 +430,7 @@ de nunca realizar o sorteio pela nossa própria plataforma fica reforçada.
 plataforma?):** não foi encontrado nenhum caso de plataforma de
 tecnologia de rifa (RifaUp, 123Rifas, Plataforma Rifa, Sortify etc.)
 penalizada, multada, bloqueada ou processada no Brasil — todo enforcement
-encontrado (Nego Di, Operação Rifa do MP-RS, outros) tem como alvo o
+encontrado (influenciadores condenados, Operação Rifa do MP-RS, outros) tem como alvo o
 **organizador/influenciador individual**, nunca a empresa de tecnologia
 por trás. Pontos de contexto que pesam contra ler isso como "plataforma
 está segura": (1) o relatório de agenda regulatória 2025 da SPA já
@@ -438,7 +438,7 @@ está segura": (1) o relatório de agenda regulatória 2025 da SPA já
 contribuição técnica pro dano — ainda não decidido a favor da plataforma,
 só sinaliza que a pergunta está em elaboração; (2) no mercado adjacente de
 apostas (mesmo órgão, SPA), já houve notificação de 33 instituições de
-pagamento e multa direta à empresa operadora (Blaze, R$2,3 milhões) — não
+pagamento e multa direta a uma empresa operadora (R$2,3 milhões) — não
 é a mesma lei de rifa, é só postura regulatória análoga do mesmo órgão;
 (3) o Ministério da Fazenda já declarou publicamente que o modelo de rifa
 paga usado por influenciadores não tem forma de legalização — a lacuna de
