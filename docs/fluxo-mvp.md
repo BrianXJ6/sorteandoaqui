@@ -120,7 +120,19 @@ Passos já decididos, na ordem em que acontecem:
    prêmios travam. A pessoa volta para editar qualquer passo ou confirma clicando em criar. Essa
    pré-visualização era uma feature que o time de UX do BRRIFAS queria e nunca entrou.
 
-Ponto ainda em aberto nesta jornada: o que acontece depois do "criar" nos sorteios pagos.
+5. **Depois do "criar".**
+   - No **Grátis**, o sorteio publica na hora e mostra "Seu sorteio está no ar", com o link para
+     compartilhar.
+   - Nos **pagos**, abre a tela de pagamento da taxa: valor, tier, QR code e "copia e cola" do PIX.
+     A tela se atualiza sozinha quando o pagamento é confirmado e mostra "Seu sorteio está no ar",
+     com o link.
+   - Se a pessoa sair no meio, o sorteio fica no painel como "Aguardando pagamento", com um botão
+     para pagar. Continua rascunho, ou seja, editável, até a ativação.
+   - Se o PIX vencer, o botão gera um novo. No BRRIFAS a cobrança não podia ser regerada depois de
+     expirar, e aqui isso não acontece.
+
+Ponto ainda em aberto nesta jornada: onde o organizador define como quer receber os pagamentos
+(PIX manual ou split).
 
 Nota para a ordem das etapas (Tópico 3): a pré-visualização reusa a página pública do sorteio,
 então a tela de revisão depende dessa página.
