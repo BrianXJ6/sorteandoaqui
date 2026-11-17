@@ -13,5 +13,6 @@ paths:
   ones Claude Code, Codex, Copilot and similar assistants add on their own.
 - Commit messages are in English, in the Conventional Commits style (`feat:`, `chore:`, `docs:`
   and so on). Make one commit per installed package and one per small domain slice.
-- Before pushing, check `git log --grep='Co-Authored-By'` returns nothing. Only push when the
-  owner asks.
+- Before pushing, check that `git log --format='%(trailers:key=Co-Authored-By,valueonly)'` prints
+  nothing. A plain `--grep` is not reliable: it also matches messages that only mention the rule.
+  Only push when the owner asks.
