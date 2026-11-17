@@ -205,8 +205,13 @@ duas regras resolve isso:
 
 - **Expiração de reserva** (seção 2, já fechada) limita **por quanto
   tempo** um número fica travado sem pagamento (máx. 48h).
-- **Limite de reserva simultânea**, configurável pelo dono da rifa (1 a
-  100, reaproveitando a faixa do BRRIFAS), limita **quantos** números/cotas
+- **Limite de reserva simultânea**, configurável pelo dono da rifa de **1 até o
+  total** de números/cotas do sorteio (decidido em 2026-11-17, trocando a faixa
+  fixa de 1 a 100 do BRRIFAS), com **padrão de 10** (ou o total, se o sorteio
+  tiver menos de 10 números). Quem tem 20.000 cotas pode permitir reservar as
+  20.000 se quiser, e o campo mostra uma mensagem orientando que valores altos
+  não são boa prática, por causa do risco de sabotagem, mas a decisão é do
+  organizador. O limite restringe **quantos** números/cotas
   a mesma identificação (e-mail, e telefone se informado) pode manter em
   status "reservado" ao mesmo tempo, **naquela rifa**. Uma vez pago, o
   número sai de "reservado" e vira "vendido" — não conta mais pro limite,

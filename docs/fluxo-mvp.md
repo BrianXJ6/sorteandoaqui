@@ -26,7 +26,7 @@ entra no MVP e em que ordem.
   - [x] Percentual da comissão do split (`marketplace_fee`): 5%, a reajustar depois
   - [ ] Valores padrão:
     - [x] Expiração da reserva: input em horas, padrão de 1 hora, de 1 a 48
-    - [ ] Limite de reservas por comprador
+    - [x] Limite de reservas por comprador: padrão 10, de 1 até o total do sorteio
     - [ ] Contador do Grátis por mês-calendário
     - [ ] Revelação imediata da cota premiada
   - [ ] Como a plataforma cobra a taxa de ativação (meio de pagamento próprio, antes do split)
