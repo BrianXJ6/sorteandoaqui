@@ -31,7 +31,9 @@ entra no MVP e em que ordem.
     - [x] Revelação da cota premiada: padrão imediato, o organizador pode trocar
   - [x] Cobrança da taxa de ativação: PIX gerado pela conta Mercado Pago da plataforma, com
         ativação automática por webhook (sem conferência manual)
-- [ ] Tópico 2: jornadas ponta a ponta (organizador e comprador)
+- [ ] Tópico 2: jornadas ponta a ponta
+  - [ ] Jornada do organizador (em andamento)
+  - [ ] Jornada do comprador
 - [ ] Tópico 3: ordem das fatias de implementação
 
 **Fase 2 — Implementação por fatias (não começou)**
@@ -87,3 +89,17 @@ leads, denúncia de sorteio.
 **Conformidade:** aceite de termos no cadastro e os avisos de LGPD entram
 quando o fluxo chegar neles (ver "Itens jurídicos e de conformidade" em
 `regras-de-negocio.md`).
+
+## 2. Jornadas ponta a ponta (em construção)
+
+### Jornada do organizador
+
+Passos já decididos, na ordem em que acontecem:
+
+1. **Cadastro e login.** Já existe no starter kit (Fortify). A pessoa física que se cadastra
+   vira a própria empresa (seção 1 de `regras-de-negocio.md`).
+2. **O painel é a porta de entrada.** Depois de entrar, a pessoa cai no painel da empresa.
+   Quando ela ainda não tem nenhum sorteio, o painel mostra um estado vazio ("Você ainda
+   não possui nenhum sorteio ativo") e **induz a criar o primeiro sorteio grátis**, com uma
+   chamada em destaque, já que o Grátis existe para o usuário testar o sistema. Quem já tem
+   sorteios vê a lista deles no lugar desse convite.
