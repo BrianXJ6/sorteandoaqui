@@ -103,3 +103,23 @@ Passos já decididos, na ordem em que acontecem:
    não possui nenhum sorteio ativo") e **induz a criar o primeiro sorteio grátis**, com uma
    chamada em destaque, já que o Grátis existe para o usuário testar o sistema. Quem já tem
    sorteios vê a lista deles no lugar desse convite.
+3. **Criação em 3 passos curtos**, para o formulário não assustar quem só quer testar (no
+   BRRIFAS isso já era uma dificuldade mapeada). O indicador mostra "Passo 1 de 3" desde o
+   início, voltar não perde o que foi digitado e cada passo salva o rascunho:
+   1. **O sorteio:** nome do prêmio, descrição e fotos.
+   2. **Números e valor:** quantidade de números e valor por número, com o tier e a taxa de
+      ativação calculados ao vivo. A modalidade segue as regras (o Grátis só tem números
+      fixos, e acima de 100 números vira cotas).
+   3. **Regras:** expiração da reserva (padrão de 1 hora), limite de reservas (padrão de 10) e
+      data prevista (opcional).
+4. **Tela de revisão com pré-visualização.** A revisão não é um passo, é uma tela: mostra o
+   sorteio exatamente como o comprador vai vê-lo, com a mesma página pública e uma faixa de
+   "Pré-visualização". Traz o aviso de que, depois de publicar, valor, quantidade, modalidade e
+   prêmios travam. A pessoa volta para editar qualquer passo ou confirma clicando em criar. Essa
+   pré-visualização era uma feature que o time de UX do BRRIFAS queria e nunca entrou.
+
+Pontos ainda em aberto nesta jornada: em qual passo ficam os prêmios extras (cota premiada e
+ranking) e o que acontece depois do "criar" nos sorteios pagos.
+
+Nota para a ordem das etapas (Tópico 3): a pré-visualização reusa a página pública do sorteio,
+então a tela de revisão depende dessa página.
