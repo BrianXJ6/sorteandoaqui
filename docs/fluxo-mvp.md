@@ -21,7 +21,8 @@ entra no MVP e em que ordem.
 
 - [x] Tópico 1: corte de escopo
 - [ ] Decisões que travam fatias:
-  - [ ] Campos do sorteio travados após publicar ou primeira venda
+  - [x] Campos do sorteio travados após publicar (trava na publicação, ver seção 6 de
+        `regras-de-negocio.md`)
   - [ ] Percentual da comissão do split (`marketplace_fee`)
   - [ ] Valores padrão: expiração da reserva (sugestão 30 min), limite de reservas por
         comprador, contador do Grátis por mês-calendário, revelação imediata da cota premiada

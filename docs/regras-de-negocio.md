@@ -380,13 +380,21 @@ os compradores que já pagaram.
   com isso usando os contatos que ele mesmo coletou. Consistente com o
   princípio de "esforço zero nosso" desse modo (seção 5).
 
-**Adiado de propósito (backlog, não bloqueia o MVP):** quais campos da
-rifa ficam travados/imutáveis após publicação ou primeira venda (pra
-evitar fraude de mudar a regra no meio do jogo). Sugestão inicial a
-revisitar: travar preço por número/cota, quantidade total, modalidade
-(fixo/aleatório) e toda a estrutura de premiação; manter editável
-descrição/marketing, imagens e a própria data prevista. Decisão final
-fica pra quando o time voltar a essas regras de negócio.
+**Campos travados depois de publicar (decidido, 2026-11-17, de partida e
+revisável):** enquanto o sorteio é rascunho, tudo é editável. A trava acontece
+**na publicação (ativação)**, e não na primeira venda, porque a taxa de
+ativação depende do valor por número e da quantidade: se esses campos ficassem
+editáveis depois de pagar a taxa, daria para pagar a faixa barata e aumentar a
+quantidade depois.
+
+| Trava na publicação | Continua editável |
+|---|---|
+| Valor por número e quantidade total | Descrição e imagens |
+| Modalidade (fixo ou cotas) e tier | Data prevista do sorteio |
+| Estrutura de premiação (prêmios, cotas premiadas, ranking) | Tempo de expiração da reserva e limite de reservas (valem só para as reservas novas) |
+
+Se for preciso corrigir um campo travado por erro, o Suporte faz isso com
+registro de auditoria (seção 7).
 
 **⚠️ ALERTA JURÍDICO DE ALTA PRIORIDADE — modelo de negócio, não só essa
 feature:** pesquisa jurídica (2026-11-13, duas rodadas) encontrou que a
