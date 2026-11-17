@@ -103,7 +103,7 @@ número ficar preso por quem não paga.
 |---|---|---|---|
 | Faturamento potencial | até R$ 1.000 | de R$ 1.000 até R$ 10.000 | acima de R$ 10.000 (sem teto) |
 | Modalidade de números | só fixo (máx. 10 números) | fixo ou aleatório (acima de 100 números, força aleatório) | fixo ou aleatório (mesma regra do limiar) |
-| Uso | máx. 1 rifa grátis **ativa** por vez, máx. 3 por mês (contador mensal) | sem limite de quantidade | sem limite de quantidade |
+| Uso | máx. 1 rifa grátis **ativa** por vez, máx. 3 por mês-calendário (o contador zera no dia 1 de cada mês) | sem limite de quantidade | sem limite de quantidade |
 
 - O teto de faturamento potencial é o que **classifica automaticamente** a
   rifa como Básica ou Avançada — não é uma escolha livre do dono, é
