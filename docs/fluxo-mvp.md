@@ -185,3 +185,27 @@ individual (seções 4 e 6 de `regras-de-negocio.md`).
 
 Nota para a ordem das etapas (Tópico 3): a pré-visualização reusa a página pública do sorteio,
 então a tela de revisão depende dessa página.
+
+### Jornada do comprador
+
+Passos já decididos, na ordem em que acontecem:
+
+1. **Página pública do sorteio**, pensada para o celular, de cima para baixo:
+   1. **Prêmio:** fotos, nome do prêmio e valor por número.
+   2. **Andamento:** barra de progresso do que já foi vendido, para o comprador perceber a
+      movimentação.
+   3. **Participar:** muda conforme a modalidade (dois layouts, no passo 2). Um botão fixo
+      "Participar" acompanha a rolagem.
+   4. **Prêmios:** o principal, as cotas premiadas (reveladas conforme a configuração do
+      organizador) e o ranking.
+   5. **Sobre:** descrição, organizador (nome e foto), regras de reserva e data prevista, ou a
+      mensagem "Esse sorteio não tem uma data prevista de sorteio".
+2. **Dois layouts de compra**, conforme a modalidade:
+   - **Números fixos:** grade de números (livre, reservado e vendido) para o comprador escolher.
+   - **Cotas aleatórias:** seletor de quantidade com **botões de atalho** (por exemplo, +10, +50 e
+     +100), cada um mostrando o valor, para ninguém clicar "+1" dezenas de vezes quando a cota é
+     barata. O organizador configura quais botões aparecem, e o comprador também pode digitar a
+     quantidade.
+
+Pontos ainda em aberto nesta jornada: se as promoções por quantidade (por exemplo, 50 cotas por
+R$ 12,00 em vez de R$ 12,50) entram no MVP, e os valores padrão dos botões de atalho.
