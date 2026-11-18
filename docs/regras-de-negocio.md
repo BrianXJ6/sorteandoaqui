@@ -115,6 +115,13 @@ número ficar preso por quem não paga.
   risco fiscal/operacional desproporcional; a Avançada resolve isso com
   split automático no ato do pagamento (ver tópico de Monetização).
 
+**Promoções por quantidade (decidido, 2026-11-18):** a decisão anterior de deixar combos de
+cotas fora do escopo foi revista, porque promoção é comum no mercado e aumenta as vendas.
+Entram no MVP, depois do núcleo: o organizador define pacotes de cotas aleatórias com
+**valor total fixo** (por exemplo, 50 cotas por R$ 12,00 em vez de R$ 12,50). Valem só para
+cotas aleatórias e, por serem regra de preço, travam na publicação. Em aberto para a etapa:
+se o faturamento potencial (tier e taxa) conta o preço cheio ou o com desconto.
+
 ## 3. Monetização (parcialmente fechado)
 
 **Tabela única de taxa de ativação**, por faixa de faturamento potencial —

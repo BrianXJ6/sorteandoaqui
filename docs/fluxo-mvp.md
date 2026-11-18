@@ -52,6 +52,7 @@ Ordem provisória, a fechar no tópico 3. Cada fatia vira commits pequenos, com 
 - [ ] Resultado declarado e prêmio principal
 - [ ] Admin mínimo (suspender conta) e e-mails em fila
 - [ ] Cota premiada e ranking de compradores
+- [ ] Promoções por quantidade (pacotes de cotas)
 - [ ] Cancelamento com estorno e reembolso individual
 - [ ] Painel interno do Suporte, auditoria e seletor de várias empresas
 - [ ] Split no Mercado Pago (última fatia)
@@ -84,7 +85,7 @@ leads, denúncia de sorteio.
 | Compra sem login: reserva atômica, limite de reservas, link por e-mail | Seletor de várias empresas por usuário | Denúncia de sorteio |
 | Pagamento por **PIX manual** | **Vitrine pública**, simples e visível | |
 | Resultado declarado e prêmio principal | Pagamento por **split no Mercado Pago**, com webhook (última fatia) | |
-| Suspender conta (Admin mínimo) e e-mails em fila | | |
+| Suspender conta (Admin mínimo) e e-mails em fila | Promoções por quantidade (pacotes de cotas) | |
 
 **Conformidade:** aceite de termos no cadastro e os avisos de LGPD entram
 quando o fluxo chegar neles (ver "Itens jurídicos e de conformidade" em

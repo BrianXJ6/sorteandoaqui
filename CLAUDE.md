@@ -31,8 +31,8 @@ monetização abaixo).
    escolhe os números — o sistema atribui números aleatórios disponíveis na compra. Deixar o
    usuário escolher entre milhares de números seria uma UX ruim e travaria o navegador
    tentando renderizar tantos itens selecionáveis.
-3. Combos/promoções em pacotes de cotas são uma feature futura planejada — explicitamente
-   fora do escopo por agora.
+3. Promoções por quantidade (pacotes de cotas, ex: 50 cotas por R$ 12,00) entram no MVP,
+   depois do núcleo (decidido em 2026-11-18).
 
 **Modelo de monetização (3 tipos de rifa, classificados automaticamente pelo faturamento
 potencial = valor por número × quantidade):**
