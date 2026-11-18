@@ -32,7 +32,7 @@ entra no MVP e em que ordem.
   - [x] Cobrança da taxa de ativação: PIX gerado pela conta Mercado Pago da plataforma, com
         ativação automática por webhook (sem conferência manual)
 - [ ] Tópico 2: jornadas ponta a ponta
-  - [ ] Jornada do organizador (em andamento)
+  - [x] Jornada do organizador
   - [ ] Jornada do comprador
 - [ ] Tópico 3: ordem das fatias de implementação
 
@@ -163,7 +163,25 @@ Passos já decididos, na ordem em que acontecem:
      "Marcar como pago", e nas reservas ativas o botão "Liberar".
    A tela começa simples e melhora com o feedback de quem usa.
 
-Ponto ainda em aberto nesta jornada: o encerramento e o registro do resultado.
+9. **Encerramento e registro do resultado.**
+   - A tela do sorteio tem o botão "Registrar resultado", disponível a qualquer momento, porque
+     a decisão de encerrar é do organizador.
+   - Ele informa o **número sorteado** e, opcionalmente, **como foi sorteado** (link da live,
+     concurso da Loteria Federal etc.).
+   - Só é aceito um número vendido e pago. Senão, uma mensagem explica o motivo: o número não
+     existe no sorteio (com a faixa válida), não foi vendido, ou está reservado com o pagamento
+     ainda não confirmado (o organizador dá baixa nas vendas e volta). Se o sorteio tem uma
+     regra para número não vendido, como "vale o próximo", o organizador a aplica por fora e
+     informa o número vencedor, porque o sorteio é sempre externo e a plataforma não decide o
+     vencedor.
+   - Só o organizador vê o ganhador completo (nome e contato), e o ganhador é avisado por
+     e-mail.
+   - A página pública mostra "Sorteio encerrado", o número sorteado e o nome do ganhador
+     abreviado (primeiro nome e inicial). A cota premiada e o ranking aparecem juntos,
+     calculados no encerramento.
+
+Fora do caminho principal, com regras já fechadas: cancelamento com estorno e reembolso
+individual (seções 4 e 6 de `regras-de-negocio.md`).
 
 Nota para a ordem das etapas (Tópico 3): a pré-visualização reusa a página pública do sorteio,
 então a tela de revisão depende dessa página.
