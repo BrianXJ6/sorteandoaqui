@@ -17,7 +17,7 @@ entra no MVP e em que ordem.
 - [x] GitHub: repositório, README, commits só com a identidade do autor e regra para qualquer IA
 - [x] Corte de escopo do MVP (tópico 1 abaixo)
 
-**Fase 1 — Planejamento do MVP (em andamento)**
+**Fase 1 — Planejamento do MVP (concluída)**
 
 - [x] Tópico 1: corte de escopo
 - [x] Decisões que travam fatias:
@@ -34,27 +34,38 @@ entra no MVP e em que ordem.
 - [x] Tópico 2: jornadas ponta a ponta
   - [x] Jornada do organizador
   - [x] Jornada do comprador
-- [ ] Tópico 3: ordem das fatias de implementação
+- [x] Tópico 3: ordem das fatias de implementação (lista da Fase 2)
 
-**Fase 2 — Implementação por fatias (não começou)**
+**Fase 2 — Implementação por fatias (próxima, ainda não começou)**
 
-Ordem provisória, a fechar no tópico 3. Cada fatia vira commits pequenos, com testes e Pint verdes:
+Ordem definida, pensada para o fluxo do Grátis funcionar de ponta a ponta o quanto antes. Cada
+fatia vira commits pequenos, com testes e Pint verdes:
+
+*Núcleo*
 
 - [ ] Empresas e membros (pessoa física como própria empresa)
-- [ ] Sorteio: criação, tiers, modalidades, regras do Grátis, edição
-- [ ] Números e reservas: fixo e cotas, expiração, limite de reservas
-- [ ] Compra sem login e link de acesso por e-mail
-- [ ] PIX manual: baixa de pagamento pelo organizador
+- [ ] Contas de recebimento (PIX manual e geração do QR code) e cadastro mínimo
+- [ ] Sorteio: criação em 3 passos, rascunho, tiers, regras do Grátis e publicação do Grátis
+- [ ] Números e reservas: reserva atômica, limite, expiração e status `under_review`
+- [ ] Página pública do sorteio (dois layouts) e pré-visualização da revisão
+- [ ] Compra sem login: identificação, PIX, "Já paguei", página de acesso aos bilhetes e
+      e-mails em fila
+- [ ] Acompanhamento do organizador: baixa, "não encontrei" e lembretes
+- [ ] Resultado declarado e prêmio principal (aqui o Grátis já funciona de ponta a ponta)
 - [ ] Pesquisa técnica do Mercado Pago (documentação oficial: cobrança PIX, webhook, split,
-      repasse programado, estorno), antes da cobrança da taxa de ativação
-- [ ] Taxa de ativação (PIX via Mercado Pago, ativação automática por webhook)
-- [ ] Página pública do sorteio e vitrine
-- [ ] Resultado declarado e prêmio principal
-- [ ] Admin mínimo (suspender conta) e e-mails em fila
+      repasse programado, estorno)
+- [ ] Taxa de ativação (PIX via Mercado Pago, ativação automática por webhook), que libera os
+      sorteios pagos
+- [ ] Admin mínimo (suspender conta)
+
+*Depois do núcleo, ainda no MVP*
+
 - [ ] Cota premiada e ranking de compradores
-- [ ] Promoções por quantidade (pacotes de cotas)
+- [ ] Pacotes de cotas e promoções
 - [ ] Cancelamento com estorno e reembolso individual
-- [ ] Painel interno do Suporte, auditoria e seletor de várias empresas
+- [ ] Painel interno do Suporte e auditoria
+- [ ] Seletor de várias empresas
+- [ ] Vitrine pública
 - [ ] Split no Mercado Pago (última fatia)
 
 **Pós-MVP:** colaboradores, assinatura e créditos, domínio próprio, segundo gateway, Vendedor e
