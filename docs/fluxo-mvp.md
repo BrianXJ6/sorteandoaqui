@@ -209,4 +209,9 @@ Passos já decididos, na ordem em que acontecem:
      preço, e aí é uma promoção ("50 cotas por R$ 12,00, economize R$ 0,50"). O organizador
      cadastra os pacotes, e o comprador também pode digitar a quantidade.
 
-Ponto ainda em aberto nesta jornada: os pacotes padrão e a relação deles com o limite de reservas.
+Regras dos pacotes: sem pacotes cadastrados, a página mostra +10, +50 e +100 pelo preço
+cheio, e pacotes maiores que o total do sorteio não aparecem. O limite de reservas nunca pode
+ser menor que o maior pacote: nas cotas o padrão é o tamanho do maior pacote (nos números
+fixos continua 10), e o sistema avisa se o organizador cadastrar um pacote maior que o limite.
+
+Ponto ainda em aberto nesta jornada: identificação, reserva e pagamento do comprador.

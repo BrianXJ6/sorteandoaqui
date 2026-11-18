@@ -122,7 +122,8 @@ de cotas**, e cada pacote vira um botão na página pública. Todo pacote tem um
 opcionalmente, um **valor total**. Sem valor total, vale quantidade vezes preço (é só um
 atalho); com um valor menor, é uma promoção (por exemplo, 50 cotas por R$ 12,00 em vez de
 R$ 12,50). Valem só para cotas aleatórias e, por serem regra de preço, travam na publicação.
-Entram no MVP, depois do núcleo. Em aberto para a etapa: se o faturamento potencial (tier e
+Sem pacotes cadastrados, a página mostra +10, +50 e +100 pelo preço cheio (pacotes maiores
+que o total do sorteio não aparecem). Entram no MVP, depois do núcleo. Em aberto para a etapa: se o faturamento potencial (tier e
 taxa) conta o preço cheio ou o com desconto.
 
 ## 3. Monetização (parcialmente fechado)
@@ -229,7 +230,9 @@ duas regras resolve isso:
 - **Limite de reserva simultânea**, configurável pelo dono da rifa de **1 até o
   total** de números/cotas do sorteio (decidido em 2026-11-17, trocando a faixa
   fixa de 1 a 100 do BRRIFAS), com **padrão de 10** (ou o total, se o sorteio
-  tiver menos de 10 números). Quem tem 20.000 cotas pode permitir reservar as
+  tiver menos de 10 números). Nas cotas aleatórias, o padrão é o tamanho do **maior pacote
+  de cotas** (seção 3), e o limite nunca pode ficar menor que o maior pacote: se o
+  organizador cadastrar um pacote maior que o limite, o sistema avisa e pede para aumentá-lo. Quem tem 20.000 cotas pode permitir reservar as
   20.000 se quiser, e o campo mostra uma mensagem orientando que valores altos
   não são boa prática, por causa do risco de sabotagem, mas a decisão é do
   organizador. O limite restringe **quantos** números/cotas
