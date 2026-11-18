@@ -203,10 +203,10 @@ Passos já decididos, na ordem em que acontecem:
       mensagem "Esse sorteio não tem uma data prevista de sorteio".
 2. **Dois layouts de compra**, conforme a modalidade:
    - **Números fixos:** grade de números (livre, reservado e vendido) para o comprador escolher.
-   - **Cotas aleatórias:** seletor de quantidade com **botões de atalho** (por exemplo, +10, +50 e
-     +100), cada um mostrando o valor, para ninguém clicar "+1" dezenas de vezes quando a cota é
-     barata. O organizador configura quais botões aparecem, e o comprador também pode digitar a
-     quantidade.
+   - **Cotas aleatórias:** seletor de quantidade com **pacotes de cotas** como botões (por
+     exemplo, +10, +50 e +100), cada um mostrando o valor, para ninguém clicar "+1" dezenas de
+     vezes quando a cota é barata. Um pacote pode ter valor total menor que quantidade vezes
+     preço, e aí é uma promoção ("50 cotas por R$ 12,00, economize R$ 0,50"). O organizador
+     cadastra os pacotes, e o comprador também pode digitar a quantidade.
 
-Pontos ainda em aberto nesta jornada: se as promoções por quantidade (por exemplo, 50 cotas por
-R$ 12,00 em vez de R$ 12,50) entram no MVP, e os valores padrão dos botões de atalho.
+Ponto ainda em aberto nesta jornada: os pacotes padrão e a relação deles com o limite de reservas.
