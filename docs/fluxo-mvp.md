@@ -156,7 +156,14 @@ Passos já decididos, na ordem em que acontecem:
    que falta, em vez de uma trava. O CPF ou CNPJ, que a nota de serviço da taxa e da comissão
    provavelmente exige em sorteios pagos, ficou como pesquisa (`pesquisas.md`).
 
-Ponto ainda em aberto nesta jornada: o acompanhamento do sorteio depois de publicado.
+8. **Acompanhamento do sorteio no ar.** Uma tela única do sorteio, com três áreas:
+   - **Compartilhar:** o link do sorteio, com botão de copiar e o QR code.
+   - **Andamento:** números vendidos, reservados e livres, e o valor arrecadado.
+   - **Vendas:** a lista das compras com o status de cada uma. No PIX manual traz o botão
+     "Marcar como pago", e nas reservas ativas o botão "Liberar".
+   A tela começa simples e melhora com o feedback de quem usa.
+
+Ponto ainda em aberto nesta jornada: o encerramento e o registro do resultado.
 
 Nota para a ordem das etapas (Tópico 3): a pré-visualização reusa a página pública do sorteio,
 então a tela de revisão depende dessa página.
