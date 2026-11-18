@@ -31,9 +31,9 @@ entra no MVP e em que ordem.
     - [x] Revelação da cota premiada: padrão imediato, o organizador pode trocar
   - [x] Cobrança da taxa de ativação: PIX gerado pela conta Mercado Pago da plataforma, com
         ativação automática por webhook (sem conferência manual)
-- [ ] Tópico 2: jornadas ponta a ponta
+- [x] Tópico 2: jornadas ponta a ponta
   - [x] Jornada do organizador
-  - [ ] Jornada do comprador
+  - [x] Jornada do comprador
 - [ ] Tópico 3: ordem das fatias de implementação
 
 **Fase 2 — Implementação por fatias (não começou)**
@@ -226,4 +226,14 @@ fixos continua 10), e o sistema avisa se o organizador cadastrar um pacote maior
 5. **Depois.** O comprador recebe por e-mail o link de acesso aos bilhetes assim que reserva,
    e um novo aviso quando o pagamento é confirmado.
 
-Ponto ainda em aberto nesta jornada: a página de acesso aos bilhetes do comprador.
+6. **Página de acesso aos bilhetes**, aberta pelo link do e-mail:
+   - **Cabeçalho:** o nome do sorteio e o estado da compra (reservada, em validação ou paga),
+     com a contagem regressiva enquanto estiver reservada.
+   - **Os números ou cotas da pessoa.** Nos números fixos, a lista dos escolhidos. Nas cotas,
+     a quantidade e, **só depois de paga**, os números atribuídos pelo sistema.
+   - **Pagamento:** enquanto estiver reservada, o QR code e o "copia e cola" de novo, para quem
+     fechou a tela, e o botão "Já paguei". Depois de paga, esse bloco some.
+   - **Resultado:** quando o sorteio encerra, a página mostra se aquela compra ganhou algum
+     prêmio.
+
+As duas jornadas estão completas.
