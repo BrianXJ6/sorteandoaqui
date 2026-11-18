@@ -214,4 +214,16 @@ cheio, e pacotes maiores que o total do sorteio não aparecem. O limite de reser
 ser menor que o maior pacote: nas cotas o padrão é o tamanho do maior pacote (nos números
 fixos continua 10), e o sistema avisa se o organizador cadastrar um pacote maior que o limite.
 
-Ponto ainda em aberto nesta jornada: identificação, reserva e pagamento do comprador.
+3. **Identificação e reserva.** Ao clicar em "Participar", a pessoa informa nome, e-mail
+   (obrigatório) e telefone (opcional). A reserva é criada na hora, de forma atômica, com
+   contagem regressiva. O limite de reservas é checado aqui, antes de qualquer QR code: se
+   estourar, a mensagem diz quantas cotas estão reservadas, quantas em validação e quanto
+   ainda pode reservar.
+4. **Pagamento no PIX manual.** Tela com o QR code e o "copia e cola" com o valor exato, o
+   nome do organizador e o prazo da reserva. O botão **"Já paguei"** é simples e marca a
+   compra como em validação (`under_review`), o que avisa o organizador no painel. As regras
+   desse status estão na seção 4 de `regras-de-negocio.md`.
+5. **Depois.** O comprador recebe por e-mail o link de acesso aos bilhetes assim que reserva,
+   e um novo aviso quando o pagamento é confirmado.
+
+Ponto ainda em aberto nesta jornada: a página de acesso aos bilhetes do comprador.

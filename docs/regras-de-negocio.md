@@ -242,6 +242,29 @@ duas regras resolve isso:
   então um comprador legítimo pode comprar em várias rodadas sem travar em
   nada. Vale pras duas modalidades (número fixo e cota aleatória).
 
+**Pagamento informado e status `under_review` (decidido, 2026-11-18):** no PIX manual, o
+comprador tem um botão "Já paguei" simples, sem formulário e sem comprovante anexado. O
+clique marca a compra como **em validação** (`under_review`), um status próprio, diferente
+de `reserved`:
+
+- O job que libera reservas **ignora** esse status, para nunca reabrir um número que o
+  comprador já pagou. Não há vencimento, porque o organizador pode ficar dias fora do ar, e
+  reabrir o número geraria compra duplicada.
+- O limite de reservas do comprador conta **tudo que ainda não foi pago**: `reserved` e
+  `under_review`. Sem isso, bastaria reservar até o limite e clicar "Já paguei" para
+  congelar o estoque. A checagem acontece ao criar a reserva, antes de qualquer QR code, e a
+  mensagem diz quantas cotas estão reservadas e quantas em validação, e quanto ainda pode
+  reservar.
+- O organizador vê no painel um contador "para conferir" e escolhe entre **marcar como pago**
+  (com a confirmação "você conferiu no extrato?") e **"não encontrei"**, que libera os
+  números e avisa o comprador. Não há tempo real nem e-mail a cada clique.
+- Compras paradas em validação geram **lembretes por e-mail ao organizador**, depois de 24
+  horas e a cada 72 horas enquanto houver pendência.
+- Na página pública, o número aparece como "em validação", indisponível.
+- **Risco aceito:** quem usa vários e-mails descartáveis ainda consegue congelar números
+  até o organizador rejeitar. Validar o e-mail de todo comprador estragaria a compra rápida,
+  então não se faz.
+
 **Liberação manual de reserva:** o dono da rifa ou um `colaborador` da
 conta (papéis definidos no tópico de multi-tenancy) pode ver as reservas
 ativas de uma rifa e liberar manualmente uma reserva antes do job
@@ -273,6 +296,13 @@ independente do modo escolhido. Em troca de não conectar gateway, o
 organizador perde acesso às ferramentas de gestão financeira/estorno do
 nosso dashboard (só disponíveis a quem usa split) — isso já funciona como
 incentivo natural pra migrar, sem precisarmos forçar nada.
+
+Decisão de 2026-11-18: o PIX manual **não ganha ferramentas extras** (nada de formulário de
+pagamento, comprovante anexado ou conferência assistida), porque a plataforma não ganha nada
+com ele e o objetivo é levar o organizador ao split. O painel mostra um convite discreto: "Com
+o split, o pagamento é confirmado sozinho e você não confere um por um". O desconforto fica
+no lado do organizador; o fluxo do comprador segue claro, com QR code e "copia e cola" com o
+valor exato.
 
 **Como o comprador paga no PIX manual (decidido, 2026-11-17):** o organizador informa só a
 chave PIX, o nome e a cidade. O sistema gera o QR code e o "copia e cola" com o valor exato
